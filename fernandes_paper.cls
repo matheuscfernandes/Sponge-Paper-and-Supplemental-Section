@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{fernandes}[04/26/2017, v1.4]
+\ProvidesClass{fernandes_paper}[04/26/2017, v1.4]
 \AtEndOfClass{\RequirePackage{microtype}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
 \ProcessOptions*
