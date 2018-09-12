@@ -247,10 +247,6 @@ which yields a relationship between the thicknesses of the non diagonal elements
 	D_{D,nd}=\left(1+\frac{1}{\sqrt{2}}\right)D_{A,nd}
 \end{equation}
 
-
-
-\mf{Write this section}
-
 \section{Optimization Analysis}
 
 For the optimization portion of the work presented in the main article we used a stochastic, derivative-free evolutionary method called Covariance Matrix Adaptation Evolution Strategy (CMA-ES) implementation in Python \citep{hansen2003}. The algorithm parameters (continuous input variables) are: the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal re-enforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation \mf{ADD HERE}.
@@ -265,11 +261,14 @@ In optimization results presented in the main article, we seek to maximize the s
 \end{figure}
 
 \section{Parameter Exploration}
-\mf{Write this section}
 Include the graphs showing critical buckling strain as a function of parameters.
+\mf{Write this section}
+
 
 \section{Additional numerical results}
 In this section we validate the RVE domain size by checking the response of larger domain sizes on the critical buckling value. This ensures that there does not exist another critical buckling mode that is limited by our choice of RVE.  
+\mf{Write this section}
+
 
 %\subsection{Analytical Derivation Of Stiffness}
 %\subsection{Analytical Derivation of Critical Buckling Strain}
