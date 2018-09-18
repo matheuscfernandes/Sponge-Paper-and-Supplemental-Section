@@ -34,10 +34,10 @@ Finally, it should also be noted that the sponge is reinforced by external ridge
     \label{Sponge}
 \end{figure}
 
-\section{Designs Considered}
-In this study, we focus on four different lattice configurations constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, the total amount of material (i.e. volume or mass) is conserved. Moreover,  we consider a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry) and two different shapes for the cross section of all lattice members: circular and rectangular.  For circular cross-sections  we stay consistent with the geometry found within the biological species. However, since slender members with circular cross section easily buckle out-of-plane when the structure is subjected to compression we must mitigate the issue by pursuing a plane-strain structure such that it's depth slenderness ratio is sufficiently deep to avoid out-of-plane buckling. In order to address this, we converted the biological observations of the cylindrical cross-section into a polygonal section. For this new cross-section type, we assume the structure to be sufficiently deep in-plane in comparison the structural length scale (plane strain assumption) to avoid out-of-plane deformation. The cross-section is scaled accordingly with mass while maintaining the depth across all elements constant. The out-of-plane slenderness is scaled accordingly with mass to maintain the depth across all elements constant. A parametric simulation on depth was analyzed to determine the minimum cross-section depth required to prevent out-of-plane buckling. Once the overall minimum depth for all geometries was chosen a factor of safety of 1.5 was added for the finial depth. The approach for minimum out-of-plane depth was further verified experimentally and the value was determined sufficient.
+\section{Designs Considered}\label{sec:designs}
+In this study, we focus on four different lattice configurations constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, the total volume of material is conserved. Moreover,  we consider a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry) as well as two different shapes for the cross section of all lattice members: circular and rectangular.  For the circular cross-section case  we stay consistent with the geometry found within the biological species. However, since slender members with such cross-section easily buckle out-of-plane when subject to compression loading we mitigate the issue by pursuing a plane-strain representative structure. To do so, we introduce the rectangular cross-section, where it's depth to slenderness ratio is sufficiently large to avoid out-of-plane deformation. 
 
-In the subsequent sections, we describe in detail the unit cells for the four different designs (Designs A-D).
+In the subsequent sections, we describe in detail the unit cells for four different designs (Designs A-D), and provide the derivations for each geometry cross-section values. 
 
 \subsection{Design A}
 Design A is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system (see \cref{DesignA}). 
@@ -87,7 +87,7 @@ Finally, it is important to note that in this study we use Design A as our base 
 V_{\alpha,d}+V_{\alpha,nd}={V}_{A,T}=2\pi L D_{A,nd}^2 \left(1+\frac{1}{2\sqrt{2}}\right),
 \end{equation}
 with $\alpha=$ B, C and D.
-Finally,  for Designs B and C, which comprise diagonal elements, we also  constrain the volume ratio of the non-diagonal to diagonal elements to be the same as in Design A
+For Designs B and C, which comprise diagonal elements, we also  constrain the volume ratio of the non-diagonal to diagonal elements to be the same as in Design A
 \begin{equation}\label{con2}
 \frac{V_{\alpha,nd}}{V_{\alpha,d}}=\frac{V_{A,nd}}{V_{A,d}}=2\sqrt{2},
 \end{equation}
@@ -95,13 +95,13 @@ with $\alpha=$ B and C.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\linewidth]{SFig2.png}
+    \includegraphics[width=0.4\linewidth]{SFig2.png}
     \caption{{\bf Unit cell for Design A.} This design is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system. The horizontal and vertical struts have length $L$ and circular cross section with diameter $D_{A,nd}$ and, as with the sponge, we assume $D_{A,nd}/L=0.1$. The diagonal elements have a circular cross section  with diameter $D_{A,d}=2 D_{A,nd}$.}
     \label{DesignA}
 \end{figure}
 
 \subsubsection{Rectangular cross-section}
-From $A_{nd}/A_d\approx 1.4$ we know that the volume is the same given that the in-plane dimension is constant, namely $V_{nd}/V_d\approx 1.4$ . Assuming that the in-plane thickness is given by $t$, we can derive the following volumes for the diagonal and non-diagonal, respectively:
+From $A_{nd}/A_d\approx 1.4$ we know that the volume is the same given that the in-plane dimension is constant, namely $V_{nd}/V_d\approx 1.4$. Assuming that the in-plane thickness is given by $t$, we can derive the following volumes for the diagonal and non-diagonal, respectively:
 \begin{equation}
 	V_{A,nd}=8LD_{A,nd}t
 \end{equation}
@@ -140,7 +140,7 @@ and
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\linewidth]{SFig3.png}
+    \includegraphics[width=0.4\linewidth]{SFig3.png}
     \caption{{\bf Unit cell for Design B.} This design is still characterized by an alternation of open and closed cells. However, instead of having two  diagonals offset from the nodes, here we only have one diagonal passing through the nodes and crossing every other cell. The horizontal and vertical struts have length $L$ and a circular cross section with diameter $D_{B,nd}$. The diagonal elements have a circular cross section  with diameter $D_{B,d}={D_{B,nd}}/{\sqrt{2}}$.}
     \label{DesignB}
 \end{figure}
@@ -192,7 +192,7 @@ and
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\linewidth]{SFig4.png}
+    \includegraphics[width=0.4\linewidth]{SFig4.png}
     \caption{{\bf Unit cell for Design C.} This design consists of a square grid with all cells being reinforced by diagonal trusses passing through the nodes.  The horizontal and vertical struts have length $L$ and a circular cross section with diameter $D_{C,nd}$. The diagonal elements have a circular cross section  with diameter $D_{C,d}={D_{C,nd}}/{2}$.}
     \label{DesignC}
 \end{figure}
@@ -206,7 +206,6 @@ and
 \begin{equation}
 D_{C,nd}=D_{A,nd}
 \end{equation}
-
 
 \subsection{Design D} 
 Design D comprises only the square grid without diagonal reinforcement (\cref{DesignD}) and is well known to be unstable and very limited in resisting shear forces \citep{gibson1999,deshpande2001}. As such, for this design we allocate the total material volume to the non-diagonal elements.
@@ -223,7 +222,7 @@ using the constraint provided by \cref{con1} we obtain
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\linewidth]{SFig5.png}
+    \includegraphics[width=0.4\linewidth]{SFig5.png}
     \caption{{\bf Unit cell for Design D.} This design consists of a square grid without diagonal reinforcement.  The horizontal and vertical struts have length $L$ and a circular cross section with diameter $D_{D,nd}$.}
     \label{DesignD}
 \end{figure}
@@ -247,10 +246,23 @@ which yields a relationship between the thicknesses of the non diagonal elements
 	D_{D,nd}=\left(1+\frac{1}{\sqrt{2}}\right)D_{A,nd}
 \end{equation}
 
-\section{Optimization Analysis}
-For the optimization portion of the work presented in the main article we used a stochastic, derivative-free evolutionary method called Covariance Matrix Adaptation Evolution Strategy (CMA-ES) implementation in Python \citep{hansen2003}. The algorithm parameters (continuous input variables) are: the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal re-enforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The optimization is run under a uniaxial loading condition in the direction parallel non-diagonal elements. In order to maintain reasonable computational complexity, the optimization was run on the unit cell constructed using one dimensional beams with node seeding of at least 1/20 of each beam length. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1.
+\section{Numerical Model}
+The finite element analysis presented in this article was conducted using the {\it ABAQUS 2017} implicit scheme. For all buckling analysis, we performed a linear stability buckling analysis and for all stiffness results we performed a linear elastic analysis. All elements are assumed to be 1D Timoshenko beam elements and all beam crossings are assumed to be welded joints. The model assumes a linear elastic material with standard Poisson's ratio $\nu=0.3$ and a non-dimentionalized elastic Young's modulus of $E=1$ (resulting in all values of stresses being non-dimentionalized by the material's Young's modulus).
 
-In optimization results presented in the main article, we seek to maximize the singly objective target function for the critical buckling load. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response. This analysis is presented in \cref{BucklingOptimization}. Similarly, the same analysis was performed on the elastic stiffness of the structure and yields a trivial result leading to maximizing the allocation of mass to the non-diagonal elements through the mass ratio.
+For the boundary conditions, we treat the geometries from the previous section as Representative Volume Elements (RVE) which are used to generate infinite structures. To implement the infinite numerical scheme, we define periodic boundary conditions along the perimeter of the RVE. Each RVE is subjected to a macroscopic deformation gradient, so that 
+\begin{equation}
+	\boldmath u_B-u_A=(\bar{F}-I)(X_B-X_A),
+\end{equation}
+where $A$ and $B$ are a pair of nodes located on the opposite side of the structure and $\boldmath u_X$ represents the finite displacement of node $X$. The deformation boundary conditions can thus be imposed on the deformation gradient given by $(\mathbold{\bar{F}-I})$, which are viewed as generalized degrees of freedom operationally applied using a set of virtual nodes. \citep{danielson2002}.
+
+For each instance, seeding of the mesh was chosen to be at least 1/10 of the minimum beam length. 
+
+\section{Optimization Analysis}
+For the optimization portion of the work presented in the main article we use a stochastic, derivative-free evolutionary method called Covariance Matrix Adaptation Evolution Strategy (CMA-ES) implementation in Python \citep{hansen2003}. The algorithm parameters (continuous input variables) are: the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
+
+The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the non-diagonal elements. 
+
+For the optimization results presented in the main article, we seek to maximize the critical buckling load using a single objective target function. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response (\cref{BucklingOptimization}.) 
 
 \begin{figure}[H]
     \centering
@@ -258,6 +270,8 @@ In optimization results presented in the main article, we seek to maximize the s
     \caption{{\bf Buckling Optimization.} Graph shows optimal value of critical buckling strain for varying number of diagonals. For all simulations, the total mass of the structure is maintained constant while the mass-ratio is allowed to vary. Furthermore, the diagonal separation for each pair of diagonal is allowed to vary together ensuring half symmetry of the structure at all times. The optimization is run under a uniaxial loading condition. The color of each point on the graph corresponds to the optimum value of mass ratio for that particular number of diagonals. Four deformation plots of the optimum structure and buckling modes are provided on the right for their respective number of diagonals.}
     \label{BucklingOptimization}
 \end{figure}
+
+\section{Circular Cross-Section Results}
 
 \section{Parameter Exploration}
 Include the graphs showing critical buckling strain as a function of parameters.\\
@@ -268,17 +282,10 @@ Include the graphs showing critical buckling strain as a function of parameters.
 \subsection{Cylindrical Cross Section}
 \subsection{Rectangular Cross Section}
 
-\section{Additional numerical results}
-\mf{Write this section}
-
- In this section we validate the RVE domain size by checking the response of larger domain sizes on the critical buckling value. This ensures that there does not exist another critical buckling mode that is limited by our choice of RVE.
+\section{Local and Global Instabilities}
+For infinite structures modeled using period boundary conditions, it is important to realize the distinction between local instabilities (i.e. instabilities with wavelength that are of the order of the size of the unit cell) and global instabilities (i.e. instabilities with large wavelengths in comparison to the size of the unit cell). In order to capture any global instabilities potentially missed by using the minimum RVE, we further develop our period numerical studies to include RVEs that tessellate the unit cells presented in \cref{sec:designs}. For all designs, we increase the domain size by tessellating up to 20x20 unit cells (creating a base grid of 40x40 square cells). For Designs A-C, the critical bucking strain and modes do not change for larger unit cells suggesting that there does not exist a global instability. Whereas, for Design D, as we increase the domain size (add more unit cells to the tessellation), the instability  wavelength continues to grow with the size of the domain, suggesting a global macroscopic instability that depends on the size of the domain. The critical buckling strain is inversely proportional with the RVE size and approaches 0 in the limit that the RVE size approaches infinity. It is well known and documented that Design D is unstable when loaded in uniaxial compression. 
 
 \mf{Write about minimum RVE -- how do I convey this message? Should I produce a plot or just verbally state this check?}
-
-\section{Analytical Derivation Of Uniaxial Stiffness}
-\mf{Write this section}
-%\subsection{Analytical Derivation of Critical Buckling Strain}
-
 
 % Bibliography
 \nocite{aizenberg2005}
