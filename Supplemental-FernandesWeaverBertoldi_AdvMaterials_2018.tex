@@ -272,6 +272,8 @@ For the optimization results presented in the main article, we seek to maximize 
 \end{figure}
 
 \section{Circular Cross-Section Results}
+The results presented here complement that found on the main article and show that the structural benefit for the Design A persists when using a different cross-section for the structure. We show that for varying loading angles all of the diagonally reinforced designs provide the same stiffness, but Design A consistently provides the best resistance to buckling. 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{SFig7.pdf}
@@ -280,13 +282,15 @@ For the optimization results presented in the main article, we seek to maximize 
 	\label{CircularCrossSection}
 \end{figure}
 \section{Parameter Exploration}
-
+In order to survey the design space of the double diagonal construction we explore parametric simulations for 2 variables: diagonal separation and mass ratio. For each of these separate analysis, we maintain the sponge geometry as our base geometry and vary only the respective variable. 
 
 \subsection{Rectangular Cross Section}
+This section shows the results when using a rectangular cross-section for the truss members. From \cref{SquareCrossSectionParameter}(a) it is apparent that there exists an optimum for the diagonal separation that occurs when the spacing between diagonals are approx 0.2 of the horizontal distance between vertical struts. This optimum value also persists when varying the loading angle. From \cref{SquareCrossSectionParameter}(b) it can be seen that the linear stiffness is symmetrically and almost purely dependent on the mass ratio allocated to diagonal versus non-diagonal elements. Comparing this figure to \cref{CircularCrossSectionParameter}(b) we can also see that even the design cross-section does not change the linear stiffness behavior. 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{SFig8.pdf}
-	\caption{{\bf Circular Cross Section Parameter Exploration.} gsdfgs}
+	\caption{{\bf Rectangular Cross Section Parameter Exploration.} For each of these plots, we vary a single parameter while maintaining the base sponge inspired geometry constant. The gray line indicates the sponge design parameter. (a) Shows the critical buckling strain for varying spacing between diagonals. (b) Shows the structural stiffness of the geometry as we vary the mass ratio $\lambda$. (c) Shows the critical buckling strain of the geometry as we vary the mass ratio $\lambda$.}
 	\label{SquareCrossSectionParameter}
 \end{figure}
 
@@ -294,7 +298,7 @@ For the optimization results presented in the main article, we seek to maximize 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{SFig9.pdf}
-	\caption{{\bf Circular Cross Section Parameter Exploration.} gsdfgs}
+	\caption{{\bf Circular Cross Section Parameter Exploration.} For each of these plots, we vary a single parameter while maintaining the base sponge inspired geometry constant. The gray line indicates the sponge design parameter. (a) Shows the critical buckling strain for varying spacing between diagonals. (b) Shows the structural stiffness of the geometry as we vary the mass ratio $\lambda$. (c) Shows the critical buckling strain of the geometry as we vary the mass ratio $\lambda$.}
 	\label{CircularCrossSectionParameter}
 \end{figure}
 
