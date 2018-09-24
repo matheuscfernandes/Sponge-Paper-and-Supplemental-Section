@@ -284,8 +284,8 @@ The results presented here complement that found on the main article and show th
 \section{Parameter Exploration}
 In order to survey the design space of the double diagonal construction we explore parametric simulations for 2 variables: diagonal separation and mass ratio. For each of these separate analysis, we maintain the sponge geometry as our base geometry and vary only the respective variable. 
 
-\subsection{Rectangular Cross Section}
-This section shows the results when using a rectangular cross-section for the truss members. From \cref{SquareCrossSectionParameter}(a) it is apparent that there exists an optimum for the diagonal separation that occurs when the spacing between diagonals are approx 0.2 of the horizontal distance between vertical struts. This optimum value also persists when varying the loading angle. From \cref{SquareCrossSectionParameter}(b) it can be seen that the linear stiffness is symmetrically and almost purely dependent on the mass ratio allocated to diagonal versus non-diagonal elements. Comparing this figure to \cref{CircularCrossSectionParameter}(b) we can also see that even the design cross-section does not change the linear stiffness behavior. 
+\subsection{Rectangular Cross Section}\label{sec:rectparam}
+This section shows the results when using a rectangular cross-section for the truss members. From \cref{SquareCrossSectionParameter}(a) it is apparent that there exists an optimum for the diagonal separation that occurs when the spacing between diagonals are approx 0.2 of the horizontal distance between vertical struts. This optimum value also persists when varying the loading angle. From \cref{SquareCrossSectionParameter}(b) it can be seen that the linear stiffness is symmetrically and almost purely dependent on the mass ratio allocated to diagonal versus non-diagonal elements. Comparing this figure to \cref{CircularCrossSectionParameter}(b) we can also see that even the design cross-section does not change the linear stiffness behavior.  \cref{SquareCrossSectionParameter}(c) shows that there exists two optimum mass ratios, one where more material is allocated to the diagonal and one where there is more material allocated to non-diagonals.  Note that if more matterialk
 
 \begin{figure}[H]
 	\centering
@@ -295,13 +295,14 @@ This section shows the results when using a rectangular cross-section for the tr
 \end{figure}
 
 \subsection{Circular Cross Section}
+For this cross-section we stay consistent with the natural sponge, and we can see from \cref{CircularCrossSectionParameter} the overall behavior has second order differences for (a), no change for (b) and a large difference in relative magnitude for (c).  Furthermore, we can see from the comparison between this section and \cref{sec:rectparam} that by using a rectangular cross-section we can tune the mass ratio to achieve an overall structure with higher critical buckling strength. 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{SFig9.pdf}
 	\caption{{\bf Circular Cross Section Parameter Exploration.} For each of these plots, we vary a single parameter while maintaining the base sponge inspired geometry constant. The gray line indicates the sponge design parameter. (a) Shows the critical buckling strain for varying spacing between diagonals. (b) Shows the structural stiffness of the geometry as we vary the mass ratio $\lambda$. (c) Shows the critical buckling strain of the geometry as we vary the mass ratio $\lambda$.}
 	\label{CircularCrossSectionParameter}
 \end{figure}
-
 
 \section{Local and Global Instabilities}
 For infinite structures modeled using period boundary conditions, it is important to realize the distinction between local instabilities (i.e. instabilities with wavelength that are of the order of the size of the unit cell) and global instabilities (i.e. instabilities with large wavelengths in comparison to the size of the unit cell). In order to capture any global instabilities potentially missed by using the minimum RVE, we further develop our period numerical studies to include RVEs that tessellate the unit cells presented in \cref{sec:designs}. For all designs, we increase the domain size by tessellating up to 20x20 unit cells (creating a base grid of 40x40 square cells). For Designs A-C, the critical bucking strain and modes do not change for larger unit cells suggesting that there does not exist a global instability. Whereas, for Design D, as we increase the domain size (add more unit cells to the tessellation), the instability  wavelength continues to grow with the size of the domain, suggesting a global macroscopic instability that depends on the size of the domain. The critical buckling strain is inversely proportional with the RVE size and approaches 0 in the limit that the RVE size approaches infinity. It is well known and documented that Design D is unstable when loaded in uniaxial compression. 
