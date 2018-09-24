@@ -272,15 +272,35 @@ For the optimization results presented in the main article, we seek to maximize 
 \end{figure}
 
 \section{Circular Cross-Section Results}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{SFig7.pdf}
+	\caption{{\bf Circular Cross Section Results.} The color of the lines correspond to it's respective design color below the plots. (a) Shows the linear elastic stiffness of the different designs as a function of the loading angle. All structures except for the design without diagonal reinforcement have the same stiffness. (b) Shows the critical buckling strain for varying loading angle. For all angles, Design A outperforms other diagonally reinforced designs. These results show that the two diagonal benefit persists beyond a particular beam cross-section design.}
+	
+	\label{CircularCrossSection}
+\end{figure}
 \section{Parameter Exploration}
 Include the graphs showing critical buckling strain as a function of parameters.\\
 \mf{Add figures for the diagonal}\\
 \mf{Add figure for $\lambda$ exploration}\\
 \mf{Make sure to include this analysis for both, rectangular cross-section and circular cross-section}\\
 \mf{Write this section}
-\subsection{Cylindrical Cross Section}
 \subsection{Rectangular Cross Section}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{SFig8.pdf}
+	\caption{{\bf Circular Cross Section Results.} gsdfgs}
+	\label{CircularCrossSectionParameter}
+\end{figure}
+
+\subsection{Cylindrical Cross Section}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{SFig9.pdf}
+	\caption{{\bf Circular Cross Section Results.} gsdfgs}
+	\label{SquareCrossSectionParameter}
+\end{figure}
+
 
 \section{Local and Global Instabilities}
 For infinite structures modeled using period boundary conditions, it is important to realize the distinction between local instabilities (i.e. instabilities with wavelength that are of the order of the size of the unit cell) and global instabilities (i.e. instabilities with large wavelengths in comparison to the size of the unit cell). In order to capture any global instabilities potentially missed by using the minimum RVE, we further develop our period numerical studies to include RVEs that tessellate the unit cells presented in \cref{sec:designs}. For all designs, we increase the domain size by tessellating up to 20x20 unit cells (creating a base grid of 40x40 square cells). For Designs A-C, the critical bucking strain and modes do not change for larger unit cells suggesting that there does not exist a global instability. Whereas, for Design D, as we increase the domain size (add more unit cells to the tessellation), the instability  wavelength continues to grow with the size of the domain, suggesting a global macroscopic instability that depends on the size of the domain. The critical buckling strain is inversely proportional with the RVE size and approaches 0 in the limit that the RVE size approaches infinity. It is well known and documented that Design D is unstable when loaded in uniaxial compression. 
