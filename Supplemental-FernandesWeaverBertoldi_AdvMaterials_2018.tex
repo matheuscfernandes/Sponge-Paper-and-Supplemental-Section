@@ -35,9 +35,9 @@ Finally, it should also be noted that the sponge is reinforced by external ridge
 \end{figure}
 
 \section{Designs Considered}\label{sec:designs}
-In this study, we focus on four different lattice configurations constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, the total volume of material is conserved. Moreover,  we consider a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry) as well as two different shapes for the cross section of all lattice members: circular and rectangular.  For the circular cross-section case  we stay consistent with the geometry found within the biological species. However, since slender members with such cross-section easily buckle out-of-plane when subject to compression loading we mitigate the issue by pursuing a plane-strain representative structure. To do so, we introduce the rectangular cross-section, where it's depth to slenderness ratio is sufficiently large to avoid out-of-plane deformation. 
+In this study, we focus on four different lattice configurations constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, the total volume of material is conserved. Moreover,  we consider a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry) as well as two different shapes for the cross section of all lattice members: circular and rectangular.  For the circular cross-section case  we stay consistent with the geometry found within the biological species. However, since slender members with such circular cross-section easily buckle out-of-plane when subject to compression loading, we also consider  rectangular cross-sections and choose the depth to slenderness ratio  sufficiently large to avoid out-of-plane deformation. 
 
-In the subsequent sections, we describe in detail the unit cells for four different designs (Designs A-D), and provide the derivations for each geometry cross-section values. 
+In the subsequent sections, we describe in detail the unit cells for four different designs (Designs A-D), and provide the derivations for each geometry cross-section characteristics. 
 
 \subsection{Design A}
 Design A is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system (see \cref{DesignA}). 
@@ -101,7 +101,9 @@ with $\alpha=$ B and C.
 \end{figure}
 
 \subsubsection{Rectangular cross-section}
-From $A_{nd}/A_d\approx 1.4$ we know that the volume is the same given that the in-plane dimension is constant, namely $V_{nd}/V_d\approx 1.4$. Assuming that the in-plane thickness is given by $t$, we can derive the following volumes for the diagonal and non-diagonal, respectively:
+\KB{clearly specify the dimension of the cross section. Don't use the diameter as dimension. It is confusing}
+\KB{I don't get the first sentence. We need to explain better}
+From $A_{nd}/A_d\approx 1.4$ we know that the volume is the same given that the in-plane dimension is constant, namely $V_{nd}/V_d\approx 1.4$. Assuming that the in-plane thickness is given by $t$, we can derive the following volumes for the diagonal and non-diagonal, respectively: \KB{why do we have $D_{A,nd}$? is this a diameter? what is $t$? is it the in-plane or out-of-plane thickness?}
 \begin{equation}
 	V_{A,nd}=8LD_{A,nd}t
 \end{equation}
@@ -120,7 +122,7 @@ Therefore, we can simplify this relationship as
 \subsection{Design B}
 Design B is similar to the sponge design (Design A) and is likewise characterized by an alternation of open and closed cells (\cref{DesignB}). However, instead of having two diagonals offset from the nodes, here we only have one diagonal passing through the nodes and crossing every other cell. 
 \subsubsection{Circular cross section}
-It follows that the non-diagonal and diagonal volumes are given by
+For this design with circular cross section the non-diagonal and diagonal volumes are given by
 \begin{equation}
 V_{B,nd}=V_{A,nd}=2\pi L D_{B,nd}^2
 \end{equation}
@@ -146,7 +148,7 @@ and
 \end{figure}
 
 \subsubsection{Rectangular cross section}
-
+\KB{don't use $D$ as a dimension of the cross section}
 For this design the volume of non-diagonal elements remain the same, namely,
 \begin{equation}
 		V_{B,nd}=8LD_{B,nd}t.
@@ -172,7 +174,7 @@ and
 Design C is inspired by the town lattice truss design introduced by architect Ithiel Town in 1820 \citep{waddell1916} and consists of every cell being reinforced by diagonal trusses passing through the nodes (see \cref{DesignC}).
 
 \subsubsection{Circular cross section}
-For this design, the non-diagonal and diagonal volumes of the unit cell are given by:
+For this design with circular cross section, the non-diagonal and diagonal volumes of the unit cell are given by:
 \begin{equation}
 V_{C,nd}=V_{A,nd}=2 L \pi D^2_{A,nd}
 \end{equation}
@@ -247,22 +249,73 @@ which yields a relationship between the thicknesses of the non diagonal elements
 \end{equation}
 
 \section{Numerical Model}
-The finite element analysis presented in this article was conducted using the {\it ABAQUS 2017} implicit scheme. For all buckling analysis, we performed a linear stability buckling analysis and for all stiffness results we performed a linear elastic analysis. All elements are assumed to be 1D Timoshenko beam elements and all beam crossings are assumed to be welded joints. The model assumes a linear elastic material with standard Poisson's ratio $\nu=0.3$ and a non-dimentionalized elastic Young's modulus of $E=1$ (resulting in all values of stresses being non-dimentionalized by the material's Young's modulus).
+The finite element analysis presented in this article were conducted using the {\it ABAQUS/Standard}. All models were constructed using 1D Timoshenko beam  (ABAQUS element type \KB{B??}) and all beam crossings were assumed to be welded joints. For each instance, seeding of the mesh was chosen to be at least 1/10 of the minimum beam length. The response of the material was captured using a linear elastic model with  Poisson's ratio $\nu=0.3$ and  Young's modulus of $E$.
 
-For the boundary conditions, we treat the geometries from the previous section as Representative Volume Elements (RVE) which are used to generate infinite structures. To implement the infinite numerical scheme, we define periodic boundary conditions along the perimeter of the RVE. Each RVE is subjected to a macroscopic deformation gradient, so that 
-\begin{equation}
-	\boldmath u_B-u_A=(\bar{F}-I)(X_B-X_A),
+
+To reduce the computational cost, we took advantage of the periodicity of the structures and investigated their response  using  a Representative Volume Element (RVE) \KB{add a schematic of the RVEs that you used}.
+To subject the RVE to a macroscopic deformation gradient $\overline{\mathbf{F}}$ periodic boundary conditions are imposed on all cell boundaries  \citep{Danielsson2002JMPS, Bertoldi2008PRB}
+\begin{equation} \label{EQN:DefInfPeriodicFEM}
+    u_\alpha^{A_i} -u_\alpha^{B_i} = (\overline{F}_{\alpha\beta}-\delta_{\alpha\beta})(X_\beta^{A_i}-X_\beta^{B_i}), \quad i=1,\,2,\,....,\,N
 \end{equation}
-where $A$ and $B$ are a pair of nodes located on the opposite side of the structure and $\boldmath u_X$ represents the finite displacement of node $X$. The deformation boundary conditions can thus be imposed on the deformation gradient given by $(\mathbold{\bar{F}-I})$, which are viewed as generalized degrees of freedom operationally applied using a set of virtual nodes. \citep{danielson2002}.
+where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchhoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{Danielsson2002JMPS, Bertoldi2008PRB}. 
 
-For each instance, seeding of the mesh was chosen to be at least 1/10 of the minimum beam length. 
+In this study the following macroscopic loading condition was considered: 
+\KB{add $\overline{\mathbf{F}}$ that you use in the analysis? this should be the most general case. How o you deal with the loading orientation $\theta$? }
+
+
+
+
+ To determine the initial stiffness of the structures  we performed a linear elastic analysis. \KB{ Which one to calculate the stiffness? Explain how do you conduct the analysis with different loading orientations}
+
+
+For all buckling analysis, we performed a linear stability buckling analysis \KB{did you use *buckling or *frequency? Did you account for the effect of pre-deformation}
+\KB{Since buckling may alter the periodicity of the
+structure, we considered super cells consisting of $m \times n$
+undeformed RVEs subjected to periodic boundary
+conditions and calculated the critical strain for each of
+them. The critical strain of the infinite periodic structure is
+then defined as the minimum critical strain on all considered
+super cells. \KB{it would be good to add this plot for each Design. Similar to Fig. 2c in "Complex Ordered Patterns in Mechanical Instability Induced Geometrically
+Frustrated Triangular Cellular Structures"}}
+
+\KB{how do you account for different $\theta$?}
+
+\KB{comment on the results}
+
+
+%For infinite structures modeled using period boundary conditions, it is important to realize the distinction between local instabilities (i.e. instabilities with wavelength that are of the order of the size of the unit cell) and global instabilities (i.e. instabilities with large wavelengths in comparison to the size of the unit cell). In order to capture any global instabilities potentially missed by using the minimum RVE, we further develop our period numerical studies to include RVEs that tessellate the unit cells presented in \cref{sec:designs}. For all designs, we increase the domain size by tessellating up to 20x20 unit cells (creating a base grid of 40x40 square cells). For Designs A-C, the critical bucking strain and modes do not change for larger unit cells suggesting that there does not exist a global instability. Whereas, for Design D, as we increase the domain size (add more unit cells to the tessellation), the instability  wavelength continues to grow with the size of the domain, suggesting a global macroscopic instability that depends on the size of the domain. The critical buckling strain is inversely proportional with the RVE size and approaches 0 in the limit that the RVE size approaches infinity. It is well known and documented that Design D is unstable when loaded in uniaxial compression. 
+
+%\mf{Write about minimum RVE -- how do I convey this message? Should I produce a plot or just verbally state this check?}
+
+
+
+
 
 \section{Optimization Analysis}
-For the optimization portion of the work presented in the main article we use a stochastic, derivative-free evolutionary method called Covariance Matrix Adaptation Evolution Strategy (CMA-ES) implementation in Python \citep{hansen2003}. The algorithm parameters (continuous input variables) are: the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
+In an effort to identify lattice configurations resulting in large critical loads, we used  a Python
+implementation of the Covariance Matrix Adaptation Evolution
+Strategy (CMA-ES) \citep{hansen2003}.  CMA-ES is an evolutionary
+algorithm that is used to solve optimization/inverse problems
+by iteratively solving several forward problems to adjust
+a covariance matrix of the solution. CMA-ES is a derivative
+free algorithm, well suited for optimization problems of
+high dimensionality. 
+
+\KB{this is not very clear. are we optimizing structures with circular or rectangular cross section? Which parameters do we keep fixed? Add a schematic}
+
+The
+parameters that need to be determined to achieve large critical loads are \KB{list all of them}
+\begin{itemize}
+\item the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and \item the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
+\end{itemize}
+
+
 
 The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the non-diagonal elements. 
 
 For the optimization results presented in the main article, we seek to maximize the critical buckling load using a single objective target function. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response (\cref{BucklingOptimization}.) 
+
+\KB{add expression for the target function}
 
 \begin{figure}[H]
     \centering
@@ -305,9 +358,6 @@ For this cross-section we stay consistent with the natural sponge, and we can se
 \end{figure}
 
 \section{Local and Global Instabilities}
-For infinite structures modeled using period boundary conditions, it is important to realize the distinction between local instabilities (i.e. instabilities with wavelength that are of the order of the size of the unit cell) and global instabilities (i.e. instabilities with large wavelengths in comparison to the size of the unit cell). In order to capture any global instabilities potentially missed by using the minimum RVE, we further develop our period numerical studies to include RVEs that tessellate the unit cells presented in \cref{sec:designs}. For all designs, we increase the domain size by tessellating up to 20x20 unit cells (creating a base grid of 40x40 square cells). For Designs A-C, the critical bucking strain and modes do not change for larger unit cells suggesting that there does not exist a global instability. Whereas, for Design D, as we increase the domain size (add more unit cells to the tessellation), the instability  wavelength continues to grow with the size of the domain, suggesting a global macroscopic instability that depends on the size of the domain. The critical buckling strain is inversely proportional with the RVE size and approaches 0 in the limit that the RVE size approaches infinity. It is well known and documented that Design D is unstable when loaded in uniaxial compression. 
-
-\mf{Write about minimum RVE -- how do I convey this message? Should I produce a plot or just verbally state this check?}
 
 % Bibliography
 \nocite{aizenberg2005}
