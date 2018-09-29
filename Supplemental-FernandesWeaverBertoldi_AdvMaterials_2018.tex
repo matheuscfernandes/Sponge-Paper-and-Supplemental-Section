@@ -311,7 +311,7 @@ high dimensionality.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.25\linewidth]{SFig11.png}
-	\caption{{\bf Schematic depicting parameters of Optimization.} This schematic shows an example optimization geometry  at a complexity level of five diagonals. For each set of even diagonals, we allow each diagonal to travel away from each other from the center junction with distances $S_1,S_2$. Note that for every odd diagonal, the distance $S_0=0$ and it is not allowed to vary in order to ensure symmetry. }
+	\caption{{\bf Schematic depicting parameters of Optimization.} This schematic shows an example optimization geometry  at a complexity level of five diagonals. For each set of even diagonals, we allow each diagonal to travel away from each other from the center junction with distances $S_1,S_2$. Note that for every odd diagonal, the distance $S_0=0$ and it is not allowed to vary in order to ensure symmetry.}
 	\label{OptimizationSchematic}
 \end{figure}
 
@@ -320,8 +320,6 @@ The parameters that need to be determined to achieve large critical loads are: t
 \begin{itemize}
 \item the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and \item the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
 \end{itemize}
-
-
 
 The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the non-diagonal elements. 
 
