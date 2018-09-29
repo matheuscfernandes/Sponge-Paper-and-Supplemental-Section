@@ -101,26 +101,26 @@ with $\alpha=$ B and C.
 \end{figure}
 
 \subsubsection{Rectangular cross-section}
-\KB{clearly specify the dimension of the cross section. Don't use the diameter as dimension. It is confusing}
-\KB{I don't get the first sentence. We need to explain better}
-From $A_{nd}/A_d\approx 1.4$ we know that the volume is the same given that the in-plane dimension is constant, namely $V_{nd}/V_d\approx 1.4$. Assuming that the in-plane thickness is given by $t$, we can derive the following volumes for the diagonal and non-diagonal, respectively: \KB{why do we have $D_{A,nd}$? is this a diameter? what is $t$? is it the in-plane or out-of-plane thickness?}
+
+Based on biological observations we can infer the ratio of non-diagonal to diagonal strut cross-sectional area to be  $A_{nd}/A_d\approx 1.4$. Using this information, we can develop the total volume ratio of non-diagonal to diagonal members to be $V_{nd}/V_d\approx 1.4$ assuming a uniform in-plane thickness $h$ for all struts. Using our sponge geometry interpretation we can obtain the following two expressions relating the members volume and thickness $T$:
 \begin{equation}
-	V_{A,nd}=8LD_{A,nd}t
+	V_{A,nd}=8LT_{A,nd}h
 \end{equation}
 \begin{equation}
-	V_{A,d}=8\sqrt{2}LD_{A,d}t
+	V_{A,d}=8\sqrt{2}LT_{A,d}h
 \end{equation}
-Let us enter this into our biological observation, which yields:
+where $V_{A,nd}$, $T_{A,nd}$,$V_{A,d}$ and $T_{A,d}$ are the non-diagonal volume, strut thickness and diagonal volume and strut thickness for Design A, respectively. Let us enter this relationship into our biological observation, which yields:
 \begin{equation}
-	\frac{V_{A,nd}}{V_{A,d}}\approx 1.4\approx\sqrt{2}=\frac{8LD_{A,nd}t}{8\sqrt{2}LD_{A,d}t}
+	\frac{V_{A,nd}}{V_{A,d}}\approx 1.4\approx\sqrt{2}=\frac{8LT_{A,nd}h}{8\sqrt{2}LT_{A,d}h}
 \end{equation}
 Therefore, we can simplify this relationship as
 \begin{equation}
-	D_{A,nd}=2D_{A,d}
+	T_{A,nd}=2T_{A,d}
 \end{equation}
 
 \subsection{Design B}
 Design B is similar to the sponge design (Design A) and is likewise characterized by an alternation of open and closed cells (\cref{DesignB}). However, instead of having two diagonals offset from the nodes, here we only have one diagonal passing through the nodes and crossing every other cell. 
+
 \subsubsection{Circular cross section}
 For this design with circular cross section the non-diagonal and diagonal volumes are given by
 \begin{equation}
@@ -148,26 +148,25 @@ and
 \end{figure}
 
 \subsubsection{Rectangular cross section}
-\KB{don't use $D$ as a dimension of the cross section}
 For this design the volume of non-diagonal elements remain the same, namely,
 \begin{equation}
-		V_{B,nd}=8LD_{B,nd}t.
+		V_{B,nd}=8LT_{B,nd}h.
 \end{equation}
 However, the volume for the diagonal elements will is different as a result the change in total length, namely,
 \begin{equation}
-		V_{B,d}=4\sqrt{2}LD_{A,d}t.
+		V_{B,d}=4\sqrt{2}LT_{A,d}h.
 \end{equation}
 In in effort to maintain a constant volume ration between the diagonally reinforced designs, we use the same volume ratio as per observation
 \begin{equation}
-		\frac{V_{B,nd}}{V_{B,d}}\approx 1.4\approx\sqrt{2}=\frac{8LD_{B,nd}t}{4\sqrt{2}LD_{B,d}t}
+		\frac{V_{B,nd}}{V_{B,d}}\approx 1.4\approx\sqrt{2}=\frac{8LT_{B,nd}h}{4\sqrt{2}LT_{B,d}h}
 \end{equation}
 which simplifies to
 \begin{equation}
-	D_{B,nd}=D_{B,d}
+	T_{B,nd}=T_{B,d}
 \end{equation}
 and
 \begin{equation}
-	D_{B,nd}=D_{A,nd}
+	T_{B,nd}=T_{A,nd}
 \end{equation}
 
 \subsection{Design C}
@@ -202,11 +201,11 @@ and
 \subsubsection{Rectangular cross section}
 Because the total length of the diagonal and non-diagonal elements are the same as for Design A, we obtain the same diameters for the elements, namely,
 \begin{equation}
-D_{A,nd}=2D_{A,d}
+T_{A,nd}=2T_{A,d}
 \end{equation}
 and
 \begin{equation}
-D_{C,nd}=D_{A,nd}
+T_{C,nd}=T_{A,nd}
 \end{equation}
 
 \subsection{Design D} 
@@ -232,32 +231,32 @@ using the constraint provided by \cref{con1} we obtain
 \subsubsection{Rectangular cross-section}
 For this design, because it does not contain any diagonal elements, we must allocate the total volume of the structure fully on the non-diagonal elements. Thus we can formulate the total volume of Design A as
 \begin{equation}
-	V_{A,nd}+V_{A,d}=(D_{A,nd}+\sqrt{2}D_{A,d})8Lt
+	V_{A,nd}+V_{A,d}=(T_{A,nd}+\sqrt{2}T_{A,d})8Lh
 \end{equation}
 Using the relationship between the non-diagonal thickness and diagonal thickness, we obtain
 \begin{equation}
-V_{A,nd}+V_{A,d}=\left(1+\frac{1}{\sqrt{2}}\right)8LtD_{A,nd}
+V_{A,nd}+V_{A,d}=\left(1+\frac{1}{\sqrt{2}}\right)8LhT_{A,nd}
 \end{equation}
 
 We can build a relationship between Design A and Design D through the total volume, such that the total volume of Design A is the same as the total volume of Design D
 \begin{equation}
-\left(1+\frac{1}{\sqrt{2}}\right)8LtD_{A,nd}=8LtD_{D,nd}
+\left(1+\frac{1}{\sqrt{2}}\right)8LhT_{A,nd}=8LhT_{D,nd}
 \end{equation}
 which yields a relationship between the thicknesses of the non diagonal elements as
 \begin{equation}
-	D_{D,nd}=\left(1+\frac{1}{\sqrt{2}}\right)D_{A,nd}
+	T_{D,nd}=\left(1+\frac{1}{\sqrt{2}}\right)T_{A,nd}
 \end{equation}
 
 \section{Numerical Model}
-The finite element analysis presented in this article were conducted using the {\it ABAQUS/Standard}. All models were constructed using 1D Timoshenko beam  (ABAQUS element type \KB{B??}) and all beam crossings were assumed to be welded joints. For each instance, seeding of the mesh was chosen to be at least 1/10 of the minimum beam length. The response of the material was captured using a linear elastic model with  Poisson's ratio $\nu=0.3$ and  Young's modulus of $E$.
+The finite element analysis presented in this article were conducted using the {\it ABAQUS/Standard}. All models were constructed using 1D Timoshenko beam  (ABAQUS element type B22) and all beam crossings were assumed to be welded joints. For each instance, seeding of the mesh was chosen to be at least 1/10 of the minimum beam length. The response of the material was captured using a linear elastic model with  Poisson's ratio $\nu=0.3$ and  Young's modulus of $E$.
 
 
-To reduce the computational cost, we took advantage of the periodicity of the structures and investigated their response  using  a Representative Volume Element (RVE) \KB{add a schematic of the RVEs that you used}.
-To subject the RVE to a macroscopic deformation gradient $\overline{\mathbf{F}}$ periodic boundary conditions are imposed on all cell boundaries  \citep{Danielsson2002JMPS, Bertoldi2008PRB}
+To reduce the computational cost, we took advantage of the periodicity of the structures and investigated their response  using  a Representative Volume Element (RVE) as seen in \cref{RVE}.
+To subject the RVE to a macroscopic deformation gradient $\overline{\mathbf{F}}$ periodic boundary conditions are imposed on all cell boundaries  \citep{danielsson2002, bertoldi2008}
 \begin{equation} \label{EQN:DefInfPeriodicFEM}
     u_\alpha^{A_i} -u_\alpha^{B_i} = (\overline{F}_{\alpha\beta}-\delta_{\alpha\beta})(X_\beta^{A_i}-X_\beta^{B_i}), \quad i=1,\,2,\,....,\,N
 \end{equation}
-where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchhoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{Danielsson2002JMPS, Bertoldi2008PRB}. 
+where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchhoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{danielsson2002, bertoldi2008}. 
 
 In this study the following macroscopic loading condition was considered: 
 \KB{add $\overline{\mathbf{F}}$ that you use in the analysis? this should be the most general case. How o you deal with the loading orientation $\theta$? }
@@ -289,7 +288,12 @@ Frustrated Triangular Cellular Structures"}}
 
 
 
-
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=0.6\linewidth]{SFig10.png}
+	\caption{{\bf RVE used for the different designs.} This figure portrays the different RVEs used for the different designs considered. Each unit cell is shifted by half of a square cell to the horizontally and half of a square cell  vertically. Periodic boundary conditions are applied on the nodes that intersect with the light gray dashed line.}
+	\label{RVE}
+\end{figure}
 
 \section{Optimization Analysis}
 In an effort to identify lattice configurations resulting in large critical loads, we used  a Python
@@ -301,10 +305,18 @@ a covariance matrix of the solution. CMA-ES is a derivative
 free algorithm, well suited for optimization problems of
 high dimensionality. 
 
+
 \KB{this is not very clear. are we optimizing structures with circular or rectangular cross section? Which parameters do we keep fixed? Add a schematic}
 
-The
-parameters that need to be determined to achieve large critical loads are \KB{list all of them}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.25\linewidth]{SFig11.png}
+	\caption{{\bf Schematic depicting parameters of Optimization.} This schematic shows an example optimization geometry  at a complexity level of five diagonals. For each set of even diagonals, we allow each diagonal to travel away from each other from the center junction with distances $S_1,S_2$. Note that for every odd diagonal, the distance $S_0=0$ and it is not allowed to vary in order to ensure symmetry. }
+	\label{OptimizationSchematic}
+\end{figure}
+
+The parameters that need to be determined to achieve large critical loads are: the number of diagonals, the mass ratio ($\lambda$) of non-diagonals to diagonal, and the separation between each even set of diagonals. For this optimization problem, the number of optimization variables increases with the number of diagonal incorporated in the model. Thus, the total number of parameters are $1+(N-1) + (N \text{ mod } 2)/N$ for a given optimization instance with $N$ number of diagonals. An illustration for an optimization structure with $N=5$ is shown \cref{OptimizationSchematic}.
+
 \begin{itemize}
 \item the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and \item the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
 \end{itemize}
@@ -360,10 +372,10 @@ For this cross-section we stay consistent with the natural sponge, and we can se
 \section{Local and Global Instabilities}
 
 % Bibliography
-\nocite{aizenberg2005}
-\nocite{deshpande2001}
-\nocite{miserez2008}
-\nocite{weaver2010}
+%\nocite{aizenberg2005}
+%\nocite{deshpande2001}
+%\nocite{miserez2008}
+%\nocite{weaver2010}
 
 \bibliography{refs}
 \bibliographystyle{apalike}
