@@ -258,14 +258,16 @@ To subject the RVE to a macroscopic deformation gradient $\overline{\mathbf{F}}$
 \end{equation}
 where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchhoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{danielsson2002, bertoldi2008}. 
 
-In this study the following macroscopic loading condition was considered: 
-\KB{add $\overline{\mathbf{F}}$ that you use in the analysis? this should be the most general case. How o you deal with the loading orientation $\theta$? }
+In this study the following uniaxial macroscopic loading condition was considered: \begin{equation}
+\overline{\mathbf{F}} = \begin{bmatrix}
+0&0\\
+0&-1
+\end{bmatrix} 
+\end{equation}
 
+In order to investigate the structure's buckling and elastic stiffness response in all directions, we rotate the unit cell model by angle $\theta$ and re-apply the above periodic boundary conditions using the rotated geometry coordinates. This approach allows us to rotate the base orthogonal coordinate system with respect to the unit cell. 
 
-
-
- To determine the initial stiffness of the structures  we performed a linear elastic analysis. \KB{ Which one to calculate the stiffness? Explain how do you conduct the analysis with different loading orientations}
-
+To determine the initial stiffness of the structures we performed a linear elastic analysis. To calculate stiffness we use a displacement controlled simulation and extract the total reaction force from the model. To obtain the structures response to varying angle, we follow the simple procedure detailed in the previous paragraph to rotate the boundary condition. Knowing the displacement applied and the total reaction force, we can use this information to compute the structural stiffness.
 
 For all buckling analysis, we performed a linear stability buckling analysis \KB{did you use *buckling or *frequency? Did you account for the effect of pre-deformation}
 \KB{Since buckling may alter the periodicity of the
@@ -296,17 +298,8 @@ Frustrated Triangular Cellular Structures"}}
 \end{figure}
 
 \section{Optimization Analysis}
-In an effort to identify lattice configurations resulting in large critical loads, we used  a Python
-implementation of the Covariance Matrix Adaptation Evolution
-Strategy (CMA-ES) \citep{hansen2003}.  CMA-ES is an evolutionary
-algorithm that is used to solve optimization/inverse problems
-by iteratively solving several forward problems to adjust
-a covariance matrix of the solution. CMA-ES is a derivative
-free algorithm, well suited for optimization problems of
-high dimensionality. 
-
-
-\KB{this is not very clear. are we optimizing structures with circular or rectangular cross section? Which parameters do we keep fixed? Add a schematic}
+In an effort to identify lattice configurations resulting in large critical loads, we used a Python implementation of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) \citep{hansen2003}. CMA-ES is an evolutionary
+algorithm that is used to solve optimization/inverse problems by iteratively solving several forward problems to adjust a covariance matrix of the solution. CMA-ES is a derivative free algorithm, well suited for optimization problems of high dimensionality and non-linear parameter topology.
 
 \begin{figure}
 	\centering
@@ -315,11 +308,7 @@ high dimensionality.
 	\label{OptimizationSchematic}
 \end{figure}
 
-The parameters that need to be determined to achieve large critical loads are: the number of diagonals, the mass ratio ($\lambda$) of non-diagonals to diagonal, and the separation between each even set of diagonals. For this optimization problem, the number of optimization variables increases with the number of diagonal incorporated in the model. Thus, the total number of parameters are $1+(N-1) + (N \text{ mod } 2)/N$ for a given optimization instance with $N$ number of diagonals. An illustration for an optimization structure with $N=5$ is shown \cref{OptimizationSchematic}.
-
-\begin{itemize}
-\item the structure's mass ratio $\lambda$ (keeping the total structure volume constant, as well as distributing the mass evenly through all diagonal and non-diagonal elements respectively) and \item the separation of the even numbered diagonal elements from the non-diagonal junction. Separate instances of the optimization algorithm are analyzed for different numbers of diagonal reinforcements. For simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
-\end{itemize}
+The parameters that need to be determined to achieve large critical loads are: the number of diagonals, the mass ratio ($\lambda$) of non-diagonal to diagonal members, and the separation between each even set of diagonals. For this optimization problem, the number of optimization variables increases with the number of diagonals incorporated in the model. Thus, the total number of parameters are $1+(N-1) + (N \text{ mod } 2)/N$ for a given optimization instance with $N$ number of diagonals. An illustration for an optimization structure with $N=5$ is shown \cref{OptimizationSchematic}. Note, for simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
 
 The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the non-diagonal elements. 
 
