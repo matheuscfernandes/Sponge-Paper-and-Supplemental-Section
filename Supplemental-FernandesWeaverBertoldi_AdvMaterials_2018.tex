@@ -269,20 +269,19 @@ In order to investigate the structure's buckling and elastic stiffness response 
 
 To determine the initial stiffness of the structures we performed a linear elastic analysis. To calculate stiffness we use a displacement controlled simulation and extract the total reaction force from the model. To obtain the structures response to varying angle, we follow the simple procedure detailed in the previous paragraph to rotate the boundary condition. Knowing the displacement applied and the total reaction force, we can use this information to compute the structural stiffness.
 
-For all buckling analysis, we performed a linear stability buckling analysis \KB{did you use *buckling or *frequency? Did you account for the effect of pre-deformation}
-\KB{Since buckling may alter the periodicity of the
-structure, we considered super cells consisting of $m \times n$
+For all buckling analysis, we performed a linear stability buckling analysis ({\tt *Buckling} command in ABAQUS input file). We perform this analysis for varying angles $\theta$ and extract the first mode critical buckling strain. Since buckling may alter the periodicity of the
+structure, we considered super cells consisting of $M \times M$
 undeformed RVEs subjected to periodic boundary
 conditions and calculated the critical strain for each of
 them. The critical strain of the infinite periodic structure is
 then defined as the minimum critical strain on all considered
-super cells. \KB{it would be good to add this plot for each Design. Similar to Fig. 2c in "Complex Ordered Patterns in Mechanical Instability Induced Geometrically
-Frustrated Triangular Cellular Structures"}}
+super cells. 
 
-\KB{how do you account for different $\theta$?}
 
-\KB{comment on the results}
+\KB{it would be good to add this plot for each Design. Similar to Fig. 2c in "Complex Ordered Patterns in Mechanical Instability Induced Geometrically
+Frustrated Triangular Cellular Structures"} \mf{Yes, I like this plot and will work on creating it.}
 
+From the main article figure\#\# \mf{add reference to main article results figure} we conclude that for all $\theta$, Design A provides a higher overall buckling strength over the other compared designs, while not compromising it's overall stiffness in every direction.
 
 %For infinite structures modeled using period boundary conditions, it is important to realize the distinction between local instabilities (i.e. instabilities with wavelength that are of the order of the size of the unit cell) and global instabilities (i.e. instabilities with large wavelengths in comparison to the size of the unit cell). In order to capture any global instabilities potentially missed by using the minimum RVE, we further develop our period numerical studies to include RVEs that tessellate the unit cells presented in \cref{sec:designs}. For all designs, we increase the domain size by tessellating up to 20x20 unit cells (creating a base grid of 40x40 square cells). For Designs A-C, the critical bucking strain and modes do not change for larger unit cells suggesting that there does not exist a global instability. Whereas, for Design D, as we increase the domain size (add more unit cells to the tessellation), the instability  wavelength continues to grow with the size of the domain, suggesting a global macroscopic instability that depends on the size of the domain. The critical buckling strain is inversely proportional with the RVE size and approaches 0 in the limit that the RVE size approaches infinity. It is well known and documented that Design D is unstable when loaded in uniaxial compression. 
 
@@ -290,7 +289,7 @@ Frustrated Triangular Cellular Structures"}}
 
 
 
-\begin{figure}[H]
+\begin{figure}
     \centering
 	\includegraphics[width=0.6\linewidth]{SFig10.png}
 	\caption{{\bf RVE used for the different designs.} This figure portrays the different RVEs used for the different designs considered. Each unit cell is shifted by half of a square cell to the horizontally and half of a square cell  vertically. Periodic boundary conditions are applied on the nodes that intersect with the light gray dashed line.}
@@ -317,7 +316,7 @@ For the optimization results presented in the main article, we seek to maximize 
 \KB{add expression for the target function} 
 \\\mf{The target function is simply 1/ buckling reaction force, should we just keep this verbally instead of mathematically?}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{SFig6.png}
     \caption{{\bf Buckling Optimization.} Graph shows optimal value of critical buckling strain for varying number of diagonals. For all simulations, the total mass of the structure is maintained constant while the mass-ratio is allowed to vary. Furthermore, the diagonal separation for each pair of diagonal is allowed to vary together ensuring half symmetry of the structure at all times. The optimization is run under a uniaxial loading condition. The color of each point on the graph corresponds to the optimum value of mass ratio for that particular number of diagonals. Four deformation plots of the optimum structure and buckling modes are provided on the right for their respective number of diagonals.}
@@ -327,7 +326,7 @@ For the optimization results presented in the main article, we seek to maximize 
 \section{Circular Cross-Section Results}
 The results presented here complement that found on the main article and show that the structural benefit for the Design A persists when using a different cross-section for the structure. We show that for varying loading angles all of the diagonally reinforced designs provide the same stiffness, but Design A consistently provides the best resistance to buckling. 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.6\linewidth]{SFig7.pdf}
 	\caption{{\bf Circular Cross Section Results.} The color of the lines correspond to it's respective design color below the plots. (a) Shows the linear elastic stiffness of the different designs as a function of the loading angle. All structures except for the design without diagonal reinforcement have the same stiffness. (b) Shows the critical buckling strain for varying loading angle. For all angles, Design A outperforms other diagonally reinforced designs. These results show that the two diagonal benefit persists beyond a particular beam cross-section design.}
@@ -340,7 +339,7 @@ In order to survey the design space of the double diagonal construction we explo
 \subsection{Rectangular Cross Section}\label{sec:rectparam}
 This section shows the results when using a rectangular cross-section for the truss members. From \cref{SquareCrossSectionParameter}(a) it is apparent that there exists an optimum for the diagonal separation that occurs when the spacing between diagonals are approx 0.2 of the horizontal distance between vertical struts. This optimum value also persists when varying the loading angle. From \cref{SquareCrossSectionParameter}(b) it can be seen that the linear stiffness is symmetrically and almost purely dependent on the mass ratio allocated to diagonal versus non-diagonal elements. Comparing this figure to \cref{CircularCrossSectionParameter}(b) we can also see that even the design cross-section does not change the linear stiffness behavior.  \cref{SquareCrossSectionParameter}(c) shows that there exists two optimum mass ratios, one where more material is allocated to the diagonal and one where there is more material allocated to non-diagonals.  Note that if more matterialk
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.9\linewidth]{SFig8.pdf}
 	\caption{{\bf Rectangular Cross Section Parameter Exploration.} For each of these plots, we vary a single parameter while maintaining the base sponge inspired geometry constant. The gray line indicates the sponge design parameter. (a) Shows the critical buckling strain for varying spacing between diagonals. (b) Shows the structural stiffness of the geometry as we vary the mass ratio $\lambda$. (c) Shows the critical buckling strain of the geometry as we vary the mass ratio $\lambda$.}
@@ -350,7 +349,7 @@ This section shows the results when using a rectangular cross-section for the tr
 \subsection{Circular Cross Section}
 For this cross-section we stay consistent with the natural sponge, and we can see from \cref{CircularCrossSectionParameter} the overall behavior has second order differences for (a), no change for (b) and a large difference in relative magnitude for (c).  Furthermore, we can see from the comparison between this section and \cref{sec:rectparam} that by using a rectangular cross-section we can tune the mass ratio to achieve an overall structure with higher critical buckling strength. 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.9\linewidth]{SFig9.pdf}
 	\caption{{\bf Circular Cross Section Parameter Exploration.} For each of these plots, we vary a single parameter while maintaining the base sponge inspired geometry constant. The gray line indicates the sponge design parameter. (a) Shows the critical buckling strain for varying spacing between diagonals. (b) Shows the structural stiffness of the geometry as we vary the mass ratio $\lambda$. (c) Shows the critical buckling strain of the geometry as we vary the mass ratio $\lambda$.}
