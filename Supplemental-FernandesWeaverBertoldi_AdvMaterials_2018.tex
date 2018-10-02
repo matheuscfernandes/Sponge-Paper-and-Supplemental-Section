@@ -9,7 +9,8 @@
 
 \author[1]{Matheus C. Fernandes}
 \author[2]{James C. Weaver}
-\author[1,3,*]{Katia Bertoldi}
+\author[1,2,3]{Joanna Aizenberg}
+\author[1,2,3,*]{Katia Bertoldi}
 
 \affil[1]{John A. Paulson School of Engineering and Applied Sciences -- Harvard University, Cambridge, MA 02138}
 \affil[2]{Wyss Institute -- Harvard University, Cambridge, MA 02138}
@@ -27,44 +28,41 @@ The periodic structures investigated in this study are inspired by the skeleton 
 
 Finally, it should also be noted that the sponge is reinforced by external ridges that extend perpendicular to the surface of the cylinder and spiral the cage at an angle of $45^\text{o}$. However, in this paper we do not report the effects of these ridges on it's structural performance.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{SFig1.png}
     \caption{\textbf{Hexactinellid sponge \textit{Euplectella aspergillum.}} (a)-(b) Full-frame photo of sponge.  (c)  Close up microscope image of the sponge. (d) Comparison between the idealized model (green and blue lines) and the sponge structure. (e) Unit cell of the idealized model.}
     \label{Sponge}
 \end{figure}
 
-\section{Designs Considered}\label{sec:designs}
-In this study, we focus on four different lattice configurations constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, the total volume of material is conserved. Moreover,  we consider a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry) as well as two different shapes for the cross section of all lattice members: circular and rectangular.  For the circular cross-section case  we stay consistent with the geometry found within the biological species. However, since slender members with such circular cross-section easily buckle out-of-plane when subject to compression loading, we also consider  rectangular cross-sections and choose the depth to slenderness ratio  sufficiently large to avoid out-of-plane deformation. 
+\section{Our four designs}\label{sec:designs}
+In this study, we focus on four different lattice configurations (Designs A, B, C and D) constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, all four designs are characterized by the same total volume of material and a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry).  Two different shapes are considered for teh cross section of the struts: circular and rectangular.  For the circular cross-section case  we denote with $D_{\alpha,nd}$ and $D_{\alpha,d}$ the diameter of the non-diagonal (i.e. horizontal and vertical) and diagonal struts in the $\alpha$-th design, respectively, and neglect out-of-plane buckling. For the rectangular cross-sections we choose the depth $H$ and in-plane thickness $T_{\alpha,nd}$ and $T_{\alpha,d}$  to avoid out-of-plane deformation (i.e. we choose the  depth over thickness ratio sufficiently large). Finally, it is important to note that teh slenderness of the non-diagonal members in the $\alpha$-th design is chosen as 
+\begin{equation}
+\frac{D_{\alpha,nd}}{L}=0.1,\;\;\;\text{and}\;\;\;\frac{T_{\alpha,nd}}{L}=0.1,
+\end{equation}
+for the case of circular and rectangular cross section, since this is the aspect ratio measured for the sponges (see \cref{sec:params}).
 
 In the subsequent sections, we describe in detail the unit cells for four different designs (Designs A-D), and provide the derivations for each geometry cross-section characteristics. 
 
 \subsection{Design A}
-Design A is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system (see \cref{DesignA}). 
+Design A is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system (see \cref{DesignA}). As for the case of the sponge, the diagonal elements are assumed to form an octagonal opening on every other cell, so that they  intersect the horizontal and vertical struts at a distance $\Delta L=L/(\sqrt{2}+2)$ from the nodes, where $L$ denote the length of the vertical/horizontal struts. 
 \subsubsection{Circular cross section} 
-If we assume that the horizontal and vertical struts have length $L$ and circular cross section  with diameters $D_{A,nd}$, their volume and projected-area in the unit cell are given by 
-\begin{equation}\label{V1}
-V_{A,nd}=8 L \left(\pi\frac{D^2_{A,nd}}{4}\right)=2 L \pi D^2_{A,nd}
-\end{equation}
-and
+If we assume that cross section of all struts is circular, the projected-area and volume for the non-diagonal ($A_{A,nd}$ and $V_{A,nd}$) and diagonal ($A_{A,d}$ and $V_{A,d}$) members is given by
 \begin{equation}\label{A1}
 A_{A,nd}=8 L D_{A,nd},
 \end{equation}
-respectively. Note that in this study we use 
-\begin{equation}
-\frac{D_{A,nd}}{L}=0.1,
+\begin{equation}\label{V1}
+V_{A,nd}=8 L \left(\pi\frac{D^2_{A,nd}}{4}\right)=2 L \pi D^2_{A,nd}
 \end{equation}
-since this is the aspect ratio measured for the sponges (see \cref{sec:params}).
-
-Moreover, as for the case of the sponge, the diagonal elements are assumed to form an octagonal opening on every other cell. As such, the diagonals intersect the horizontal and vertical struts at a distance $\Delta L=L/(\sqrt{2}+2)$ from the nodes and their  volume and projected area in the unit cell are
-\begin{equation}\label{V2}
-V_{A,d}=8 \sqrt{2} L\left(\pi\frac{D^2_{A,d}}{4}\right)=2\sqrt{2}L \pi D^2_{A,d},
-\end{equation}
-and
 \begin{equation}\label{A2}
 A_{A,d}=8\sqrt{2} L D_{A,d},
 \end{equation}
-respectively. Since the projected area ratio of the non-diagonal to diagonal elements in the sponge has been measured to be 
+and
+\begin{equation}\label{V2}
+V_{A,d}=8 \sqrt{2} L\left(\pi\frac{D^2_{A,d}}{4}\right)=2\sqrt{2}L \pi D^2_{A,d}.
+\end{equation}
+
+ Since the projected area ratio of the non-diagonal to diagonal elements in the sponge has been measured to be 
 \begin{equation}
 \frac{A_{A,nd}}{A_{A,d}}=1.4,
 \end{equation}
@@ -82,7 +80,7 @@ V_{A,T}=V_{A,nd}+V_{A,d}=2\pi L (D_{A,nd}^2+\sqrt{2} D_{A,d}^2)=2\pi L D_{A,nd}^
 \end{equation}
 where $V_{A,T}$ indicates the total volume of the unit cell for Design A. 
 
-Finally, it is important to note that in this study we use Design A as our base model, and thus constrain the total volume of all the other unit cell designs to be equal to that of Design A, namely,
+Finally, it is important to note that in this study we use Design A as our base model, and thus constrain the total volume of all the other unit cell designs with circular cross section to be equal to that of Design A, namely,
 \begin{equation}\label{con1}
 V_{\alpha,d}+V_{\alpha,nd}={V}_{A,T}=2\pi L D_{A,nd}^2 \left(1+\frac{1}{2\sqrt{2}}\right),
 \end{equation}
@@ -102,21 +100,30 @@ with $\alpha=$ B and C.
 
 \subsubsection{Rectangular cross-section}
 
-Based on biological observations we can infer the ratio of non-diagonal to diagonal strut cross-sectional area to be  $A_{nd}/A_d\approx 1.4$. Using this information, we can develop the total volume ratio of non-diagonal to diagonal members to be $V_{nd}/V_d\approx 1.4$ assuming a uniform in-plane thickness $h$ for all struts. Using our sponge geometry interpretation we can obtain the following two expressions relating the members volume and thickness $T$:
+If we assume that the cross section of all struts is rectangular, the projected-area  for the non-diagonal ($A_{A,nd}$) and diagonal ($A_{A,d}$) members is given by
 \begin{equation}
-	V_{A,nd}=8LT_{A,nd}h
+	A_{A,nd}=8LT_{A,nd}
 \end{equation}
+and
 \begin{equation}
-	V_{A,d}=8\sqrt{2}LT_{A,d}h
+	A_{A,d}=8\sqrt{2}LT_{A,d}
 \end{equation}
-where $V_{A,nd}$, $T_{A,nd}$,$V_{A,d}$ and $T_{A,d}$ are the non-diagonal volume, strut thickness and diagonal volume and strut thickness for Design A, respectively. Let us enter this relationship into our biological observation, which yields:
+where  $T_{A,nd}$ and $T_{A,d}$ are the non-diagonal and diagonal in-plane strut thickness for Design A, respectively.
+Since for the sponge   $A_{nd}/A_d\approx 1.4$, it follows that
 \begin{equation}
-	\frac{V_{A,nd}}{V_{A,d}}\approx 1.4\approx\sqrt{2}=\frac{8LT_{A,nd}h}{8\sqrt{2}LT_{A,d}h}
+	T_{A,nd}=2T_{A,d}.
 \end{equation}
-Therefore, we can simplify this relationship as
-\begin{equation}
-	T_{A,nd}=2T_{A,d}
+
+Finally, also for the case of rectangular cross-section we use Design A as our base model, and thus constrain the total volume of all the other unit cell designs with rectangular cross-section to be equal to that of Design A, namely, \KB{update eqn}
+\begin{equation}\label{con1R}
+V_{\alpha,d}+V_{\alpha,nd}={V}_{A,T}= ??,
 \end{equation}
+with $\alpha=$ B, C and D.
+Moreover, for Designs B and C, which comprise diagonal elements, we also  constrain the volume ratio of the non-diagonal to diagonal elements to be the same as in Design A \KB{update eqn}
+\begin{equation}\label{con2R}
+\frac{V_{\alpha,nd}}{V_{\alpha,d}}=???,
+\end{equation}
+with $\alpha=$ B and C.
 
 \subsection{Design B}
 Design B is similar to the sponge design (Design A) and is likewise characterized by an alternation of open and closed cells (\cref{DesignB}). However, instead of having two diagonals offset from the nodes, here we only have one diagonal passing through the nodes and crossing every other cell. 
@@ -148,19 +155,15 @@ and
 \end{figure}
 
 \subsubsection{Rectangular cross section}
-For this design the volume of non-diagonal elements remain the same, namely,
+For this design with circular cross section the volume of the non-diagonal and diagonal mmebers  are given by
 \begin{equation}
-		V_{B,nd}=8LT_{B,nd}h.
+		V_{B,nd}=8LT_{B,nd}H.
 \end{equation}
-However, the volume for the diagonal elements will is different as a result the change in total length, namely,
+and
 \begin{equation}
-		V_{B,d}=4\sqrt{2}LT_{A,d}h.
+		V_{B,d}=4\sqrt{2}LT_{A,d}H.
 \end{equation}
-In in effort to maintain a constant volume ration between the diagonally reinforced designs, we use the same volume ratio as per observation
-\begin{equation}
-		\frac{V_{B,nd}}{V_{B,d}}\approx 1.4\approx\sqrt{2}=\frac{8LT_{B,nd}h}{4\sqrt{2}LT_{B,d}h}
-\end{equation}
-which simplifies to
+Using the constraints provided by \cref{con1R} and \cref{con2R}, as well as the above volumes, we  obtain
 \begin{equation}
 	T_{B,nd}=T_{B,d}
 \end{equation}
@@ -173,7 +176,7 @@ and
 Design C is inspired by the town lattice truss design introduced by architect Ithiel Town in 1820 \citep{waddell1916} and consists of every cell being reinforced by diagonal trusses passing through the nodes (see \cref{DesignC}).
 
 \subsubsection{Circular cross section}
-For this design with circular cross section, the non-diagonal and diagonal volumes of the unit cell are given by:
+For this design with circular cross section, the volume of the non-diagonal and diagonal members  of the unit cell are given by:
 \begin{equation}
 V_{C,nd}=V_{A,nd}=2 L \pi D^2_{A,nd}
 \end{equation}
@@ -199,17 +202,19 @@ and
 \end{figure}
 
 \subsubsection{Rectangular cross section}
-Because the total length of the diagonal and non-diagonal elements are the same as for Design A, we obtain the same diameters for the elements, namely,
+For this design with circular cross section, the volume of the non-diagonal and diagonal members  of the unit cell are given by
+\KB{add eqns.}
+Using the constraints provided by \cref{con1R} and \cref{con2R}, as well as the above volumes, we  obtain
 \begin{equation}
-T_{A,nd}=2T_{A,d}
+T_{A,nd}=2T_{A,d},
 \end{equation}
 and
 \begin{equation}
-T_{C,nd}=T_{A,nd}
+T_{C,nd}=T_{A,nd}.
 \end{equation}
 
 \subsection{Design D} 
-Design D comprises only the square grid without diagonal reinforcement (\cref{DesignD}) and is well known to be unstable and very limited in resisting shear forces \citep{gibson1999,deshpande2001}. As such, for this design we allocate the total material volume to the non-diagonal elements.
+Design D comprises only the square grid without diagonal reinforcement (\cref{DesignD}). As such, for this design we allocate the total material volume to the non-diagonal elements. Note that this design is well known to be unstable and very limited in resisting shear forces \citep{gibson1999,deshpande2001}.
 
 \subsubsection{Circular cross section}
 Since
@@ -229,20 +234,11 @@ using the constraint provided by \cref{con1} we obtain
 \end{figure}
 
 \subsubsection{Rectangular cross-section}
-For this design, because it does not contain any diagonal elements, we must allocate the total volume of the structure fully on the non-diagonal elements. Thus we can formulate the total volume of Design A as
+Since
 \begin{equation}
-	V_{A,nd}+V_{A,d}=(T_{A,nd}+\sqrt{2}T_{A,d})8Lh
+V_{D,T}=V_{D,nd}=8 L T_{D,nd} H,
 \end{equation}
-Using the relationship between the non-diagonal thickness and diagonal thickness, we obtain
-\begin{equation}
-V_{A,nd}+V_{A,d}=\left(1+\frac{1}{\sqrt{2}}\right)8LhT_{A,nd}
-\end{equation}
-
-We can build a relationship between Design A and Design D through the total volume, such that the total volume of Design A is the same as the total volume of Design D
-\begin{equation}
-\left(1+\frac{1}{\sqrt{2}}\right)8LhT_{A,nd}=8LhT_{D,nd}
-\end{equation}
-which yields a relationship between the thicknesses of the non diagonal elements as
+using the constraint provided by \cref{con1R} we obtain
 \begin{equation}
 	T_{D,nd}=\left(1+\frac{1}{\sqrt{2}}\right)T_{A,nd}
 \end{equation}
@@ -251,17 +247,17 @@ which yields a relationship between the thicknesses of the non diagonal elements
 The finite element analysis presented in this article were conducted using the {\it ABAQUS/Standard}. All models were constructed using 1D Timoshenko beam  (ABAQUS element type B22) and all beam crossings were assumed to be welded joints. For each instance, seeding of the mesh was chosen to be at least 1/10 of the minimum beam length. The response of the material was captured using a linear elastic model with  Poisson's ratio $\nu=0.3$ and  Young's modulus of $E$.
 
 
-To reduce the computational cost, we took advantage of the periodicity of the structures and investigated their response  using  a Representative Volume Element (RVE) as seen in \cref{RVE}.
-To subject the RVE to a macroscopic deformation gradient $\overline{\mathbf{F}}$ periodic boundary conditions are imposed on all cell boundaries  \citep{danielsson2002, bertoldi2008}
+To reduce the computational cost, we took advantage of the periodicity of the structures and investigated their response  using  the unit cells shown  in \cref{RVE}.
+To subject the unit cells to a macroscopic deformation gradient $\overline{\mathbf{F}}$ periodic boundary conditions are imposed on all cell boundaries by enforcing  \citep{danielsson2002, bertoldi2008}
 \begin{equation} \label{EQN:DefInfPeriodicFEM}
     u_\alpha^{A_i} -u_\alpha^{B_i} = (\overline{F}_{\alpha\beta}-\delta_{\alpha\beta})(X_\beta^{A_i}-X_\beta^{B_i}), \quad i=1,\,2,\,....,\,N
 \end{equation}
-where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchhoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{danielsson2002, bertoldi2008}. 
+where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. \KB{what does the following sentence mean? Are you referring to the unit cells shown in Fig. 6?}For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{danielsson2002, bertoldi2008}. 
 
-In this study the following uniaxial macroscopic loading condition was considered: \begin{equation}
+To subject the structures to uniaxial compression, in this study the following uniaxial macroscopic loading condition was considered:\KB{are you sure? I believe we left $\lambda_x$ unset. Right?} \begin{equation}
 \overline{\mathbf{F}} = \begin{bmatrix}
 0&0\\
-0&-1
+0&\lambda_y
 \end{bmatrix} 
 \end{equation}
 
@@ -307,14 +303,18 @@ algorithm that is used to solve optimization/inverse problems by iteratively sol
 	\label{OptimizationSchematic}
 \end{figure}
 
-The parameters that need to be determined to achieve large critical loads are: the number of diagonals, the mass ratio ($\lambda$) of non-diagonal to diagonal members, and the separation between each even set of diagonals. For this optimization problem, the number of optimization variables increases with the number of diagonals incorporated in the model. Thus, the total number of parameters are $1+(N-1) + (N \text{ mod } 2)/N$ for a given optimization instance with $N$ number of diagonals. An illustration for an optimization structure with $N=5$ is shown \cref{OptimizationSchematic}. Note, for simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry. 
+In this study we used CMA-ES to identify \begin{itemize} 
+\item the number of diagonals, $N$
+\item the volume ratio  of non-diagonal to diagonal members, $\lambda=V_{nd}/V_{d}$.
+\item  the separation between each even set of diagonals, $S_i$ (see Fig. \ref{OptimizationSchematic})
+\end{itemize}
+resulting in a lattice structure with the large critical load. For such optimization problem, the number of optimization variables increases with the number of diagonals incorporated in the model(i.e. the total number of parameters are $1+ \frac{1}{2}(N - (N \text{ mod } 2))$ for a given optimization instance with $N$ number of diagonals).  Note, for simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry (see Fig. \ref{OptimizationSchematic}). 
 
-The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the non-diagonal elements. 
+The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and \KB{is thsi $S_i$??}diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the vertical elements. 
 
 For the optimization results presented in the main article, we seek to maximize the critical buckling load using a single objective target function. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response (\cref{BucklingOptimization}.) 
 
-\KB{add expression for the target function} 
-\\\mf{The target function is simply 1/ buckling reaction force, should we just keep this verbally instead of mathematically?}
+
 
 \begin{figure}
     \centering
