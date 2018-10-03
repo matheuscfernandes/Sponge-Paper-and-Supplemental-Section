@@ -61,7 +61,7 @@
 %                justification=RaggedRight]{caption}
 \RequirePackage{caption}
 \DeclareCaptionFont{colorcaption}{\color{color2}}
-\usepackage[labelfont={colorcaption,bf,sf},width=0.9\linewidth,format=hang]{caption}
+\usepackage[labelfont={colorcaption,bf,sf},width=0.9\linewidth,format=hang,font=small]{caption}
 % \captionsetup{font=doublespacing} %double spacing of captions
 
 \setlength{\columnsep}{24pt} % Distance between the two columns of text

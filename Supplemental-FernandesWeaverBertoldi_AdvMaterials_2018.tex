@@ -36,18 +36,18 @@ Finally, it should also be noted that the sponge is reinforced by external ridge
 \end{figure}
 
 \section{Our four designs}\label{sec:designs}
-In this study, we focus on four different lattice configurations (Designs A, B, C and D) constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, all four designs are characterized by the same total volume of material and a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry).  Two different shapes are considered for teh cross section of the struts: circular and rectangular.  For the circular cross-section case  we denote with $D_{\alpha,nd}$ and $D_{\alpha,d}$ the diameter of the non-diagonal (i.e. horizontal and vertical) and diagonal struts in the $\alpha$-th design, respectively, and neglect out-of-plane buckling. For the rectangular cross-sections we choose the depth $H$ and in-plane thickness $T_{\alpha,nd}$ and $T_{\alpha,d}$  to avoid out-of-plane deformation (i.e. we choose the  depth over thickness ratio sufficiently large). Finally, it is important to note that teh slenderness of the non-diagonal members in the $\alpha$-th design is chosen as 
+In this study, we focus on four different lattice configurations (Designs A, B, C and D) constrained to deform in an in-plane setting only. In an effort to conduct a fair performance comparison between the different designs, all four designs are characterized by the same total volume of material and a fixed volume ratio between non-diagonal and diagonal elements (chosen to match the sponge geometry).  Two different shapes are considered for the cross-section of the struts: circular and rectangular.  For the circular cross-section case  we denote the diameters with $D_{\alpha,nd}$ and $D_{\alpha,d}$ of the non-diagonal (i.e. horizontal and vertical) and diagonal struts in the $\alpha$-th design, respectively, and neglect out-of-plane buckling. For the rectangular cross-sections we choose the depth $H$ and in-plane thickness $T_{\alpha,nd}$ and $T_{\alpha,d}$  to avoid out-of-plane deformation (i.e. we choose the  depth over thickness ratio sufficiently large). Finally, it is important to note that the slenderness of the non-diagonal members in the $\alpha$-th design $\in [A,B,C]$ is chosen as 
 \begin{equation}
-\frac{D_{\alpha,nd}}{L}=0.1,\;\;\;\text{and}\;\;\;\frac{T_{\alpha,nd}}{L}=0.1,
+\frac{D_{\alpha,nd}}{L}=0.1,\quad\text{and}\quad\frac{T_{\alpha,nd}}{L}=0.1,
 \end{equation}
 for the case of circular and rectangular cross section, since this is the aspect ratio measured for the sponges (see \cref{sec:params}).
 
-In the subsequent sections, we describe in detail the unit cells for four different designs (Designs A-D), and provide the derivations for each geometry cross-section characteristics. 
+In the subsequent sections, we describe in detail the unit cells for four different designs, and provide the derivations for each geometry cross-section characteristics. 
 
 \subsection{Design A}
 Design A is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system (see \cref{DesignA}). As for the case of the sponge, the diagonal elements are assumed to form an octagonal opening on every other cell, so that they  intersect the horizontal and vertical struts at a distance $\Delta L=L/(\sqrt{2}+2)$ from the nodes, where $L$ denote the length of the vertical/horizontal struts. 
 \subsubsection{Circular cross section} 
-If we assume that cross section of all struts is circular, the projected-area and volume for the non-diagonal ($A_{A,nd}$ and $V_{A,nd}$) and diagonal ($A_{A,d}$ and $V_{A,d}$) members is given by
+If we assume that cross section of all struts is circular, the projected area and volume for the non-diagonal ($A_{A,nd}$ and $V_{A,nd}$) and diagonal ($A_{A,d}$ and $V_{A,d}$) members is given by
 \begin{equation}\label{A1}
 A_{A,nd}=8 L D_{A,nd},
 \end{equation}
@@ -114,16 +114,16 @@ Since for the sponge   $A_{nd}/A_d\approx 1.4$, it follows that
 	T_{A,nd}=2T_{A,d}.
 \end{equation}
 
-Finally, also for the case of rectangular cross-section we use Design A as our base model, and thus constrain the total volume of all the other unit cell designs with rectangular cross-section to be equal to that of Design A, namely, \KB{update eqn}
+Finally, also for the case of rectangular cross-section we use Design A as our base model, and thus constrain the total volume of all the other unit cell designs with rectangular cross-section to be equal to that of Design A, namely,
 \begin{equation}\label{con1R}
-V_{\alpha,d}+V_{\alpha,nd}={V}_{A,T}= ??,
+{V}_{A,T}=V_{\alpha,d}+V_{\alpha,nd}= 8LH(T_{A,nd}+\sqrt{2}T_{A,d})=8LHT_{A,nd}\left(1+\frac{1}{\sqrt{2}}\right),
 \end{equation}
 with $\alpha=$ B, C and D.
-Moreover, for Designs B and C, which comprise diagonal elements, we also  constrain the volume ratio of the non-diagonal to diagonal elements to be the same as in Design A \KB{update eqn}
+Moreover, for Designs B and C, which comprise diagonal elements, we also  constrain the volume ratio of the non-diagonal to diagonal elements to be the same as in Design A,
 \begin{equation}\label{con2R}
-\frac{V_{\alpha,nd}}{V_{\alpha,d}}=???,
+\frac{V_{\alpha,nd}}{V_{\alpha,d}}=\sqrt{2},
 \end{equation}
-with $\alpha=$ B and C.
+with $\alpha\in$ B and C.
 
 \subsection{Design B}
 Design B is similar to the sponge design (Design A) and is likewise characterized by an alternation of open and closed cells (\cref{DesignB}). However, instead of having two diagonals offset from the nodes, here we only have one diagonal passing through the nodes and crossing every other cell. 
@@ -155,13 +155,13 @@ and
 \end{figure}
 
 \subsubsection{Rectangular cross section}
-For this design with circular cross section the volume of the non-diagonal and diagonal mmebers  are given by
+For this design with circular cross section the volume of the non-diagonal and diagonal members  are given by
 \begin{equation}
 		V_{B,nd}=8LT_{B,nd}H.
 \end{equation}
 and
 \begin{equation}
-		V_{B,d}=4\sqrt{2}LT_{A,d}H.
+		V_{B,d}=4\sqrt{2}LT_{B,d}H.
 \end{equation}
 Using the constraints provided by \cref{con1R} and \cref{con2R}, as well as the above volumes, we  obtain
 \begin{equation}
@@ -203,10 +203,16 @@ and
 
 \subsubsection{Rectangular cross section}
 For this design with circular cross section, the volume of the non-diagonal and diagonal members  of the unit cell are given by
-\KB{add eqns.}
+\begin{equation}
+V_{C,nd}=8LT_{C,nd}H
+\end{equation}
+and
+\begin{equation}
+V_{C,d}=8\sqrt{2}LT_{C,d}H
+\end{equation}
 Using the constraints provided by \cref{con1R} and \cref{con2R}, as well as the above volumes, we  obtain
 \begin{equation}
-T_{A,nd}=2T_{A,d},
+T_{C,nd}=2T_{C,d},
 \end{equation}
 and
 \begin{equation}
@@ -250,13 +256,13 @@ The finite element analysis presented in this article were conducted using the {
 To reduce the computational cost, we took advantage of the periodicity of the structures and investigated their response  using  the unit cells shown  in \cref{RVE}.
 To subject the unit cells to a macroscopic deformation gradient $\overline{\mathbf{F}}$ periodic boundary conditions are imposed on all cell boundaries by enforcing  \citep{danielsson2002, bertoldi2008}
 \begin{equation} \label{EQN:DefInfPeriodicFEM}
-    u_\alpha^{A_i} -u_\alpha^{B_i} = (\overline{F}_{\alpha\beta}-\delta_{\alpha\beta})(X_\beta^{A_i}-X_\beta^{B_i}), \quad i=1,\,2,\,....,\,N
+    \mathbf{u}_\alpha^{A_i} -\mathbf{u}_\alpha^{B_i} = (\mathbf{\overline{F}}_{\alpha\beta}-\delta_{\alpha\beta})(\mathbf{X}_\beta^{A_i}-\mathbf{X}_\beta^{B_i}), \quad i=1,\,2,\,....,\,K
 \end{equation}
-where $\delta_{\alpha\beta}$ is the Kronecker delta, $u_\alpha^{A_i}$  and $u_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $N$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell. \KB{what does the following sentence mean? Are you referring to the unit cells shown in Fig. 6?}For the square lattice considered in this study $N=2$ when the unit cell is considered, while $N=4$ and $N=6$ for the enlarged $2\times2$ and $1\times5$ unit cells, respectively. Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{danielsson2002, bertoldi2008}. 
+where $\delta_{\alpha\beta}$ is the Kronecker delta, $\mathbf{u}_\alpha^{A_i}$  and $\mathbf{u}_\alpha^{B_i}$ ($\alpha=1,\,2$) are displacements of points periodically located on the boundary of the unit cell. Moreover, $K$ denotes the number of pairs of nodes periodically located on the boundary of the unit cell.  Note that  the components of $\overline{\mathbf{F}}$ can be conveniently prescribed within the finite element framework using a set of virtual nodes. The corresponding  macroscopic first Piola-Kirchoff stress $\overline{\mathbf{P}}$ is then obtained through virtual work considerations \citep{danielsson2002, bertoldi2008}. 
 
-To subject the structures to uniaxial compression, in this study the following uniaxial macroscopic loading condition was considered:\KB{are you sure? I believe we left $\lambda_x$ unset. Right?} \begin{equation}
+To subject the structures to uniaxial compression, in this study the following uniaxial macroscopic loading condition was considered: \begin{equation}
 \overline{\mathbf{F}} = \begin{bmatrix}
-0&0\\
+\text{UNSET}&0\\
 0&\lambda_y
 \end{bmatrix} 
 \end{equation}
@@ -298,7 +304,7 @@ algorithm that is used to solve optimization/inverse problems by iteratively sol
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.25\linewidth]{SFig11.png}
+	\includegraphics[width=0.2\linewidth]{SFig11.png}
 	\caption{{\bf Schematic depicting parameters of Optimization.} This schematic shows an example optimization geometry  at a complexity level of five diagonals. For each set of even diagonals, we allow each diagonal to travel away from each other from the center junction with distances $S_1,S_2$. Note that for every odd diagonal, the distance $S_0=0$ and it is not allowed to vary in order to ensure symmetry.}
 	\label{OptimizationSchematic}
 \end{figure}
@@ -310,7 +316,7 @@ In this study we used CMA-ES to identify \begin{itemize}
 \end{itemize}
 resulting in a lattice structure with the large critical load. For such optimization problem, the number of optimization variables increases with the number of diagonals incorporated in the model(i.e. the total number of parameters are $1+ \frac{1}{2}(N - (N \text{ mod } 2))$ for a given optimization instance with $N$ number of diagonals).  Note, for simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry (see Fig. \ref{OptimizationSchematic}). 
 
-The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and \KB{is thsi $S_i$??}diagonal separation$=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the vertical elements. 
+The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation for the even set of diagonals $S_i=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the vertical elements. 
 
 For the optimization results presented in the main article, we seek to maximize the critical buckling load using a single objective target function. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response (\cref{BucklingOptimization}.) 
 
@@ -337,7 +343,7 @@ The results presented here complement that found on the main article and show th
 In order to survey the design space of the double diagonal construction we explore parametric simulations for 2 variables: diagonal separation and mass ratio. For each of these separate analysis, we maintain the sponge geometry as our base geometry and vary only the respective variable. 
 
 \subsection{Rectangular Cross Section}\label{sec:rectparam}
-This section shows the results when using a rectangular cross-section for the truss members. From \cref{SquareCrossSectionParameter}(a) it is apparent that there exists an optimum for the diagonal separation that occurs when the spacing between diagonals are approx 0.2 of the horizontal distance between vertical struts. This optimum value also persists when varying the loading angle. From \cref{SquareCrossSectionParameter}(b) it can be seen that the linear stiffness is symmetrically and almost purely dependent on the mass ratio allocated to diagonal versus non-diagonal elements. Comparing this figure to \cref{CircularCrossSectionParameter}(b) we can also see that even the design cross-section does not change the linear stiffness behavior.  \cref{SquareCrossSectionParameter}(c) shows that there exists two optimum mass ratios, one where more material is allocated to the diagonal and one where there is more material allocated to non-diagonals.  Note that if more matterialk
+This section shows the results when using a rectangular cross-section for the truss members. From \cref{SquareCrossSectionParameter}(a) it is apparent that there exists an optimum for the diagonal separation that occurs when the spacing between diagonals are approx 0.2 of the horizontal distance between vertical struts. This optimum value also persists when varying the loading angle. From \cref{SquareCrossSectionParameter}(b) it can be seen that the linear stiffness is symmetrically and almost purely dependent on the mass ratio allocated to diagonal versus non-diagonal elements. Comparing this figure to \cref{CircularCrossSectionParameter}(b) we can also see that even the design cross-section does not change the linear stiffness behavior.  \cref{SquareCrossSectionParameter}(c) shows that there exists two optimum mass ratios, one where more material is allocated to the diagonal and one where there is more material allocated to non-diagonals.
 
 \begin{figure}
 	\centering
@@ -358,7 +364,12 @@ For this cross-section we stay consistent with the natural sponge, and we can se
 
 \section{Local and Global Instabilities}
 \mf{How should I go about describing this here?}
-
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{SFig12.pdf}
+	\caption{{\bf Schematic depicting parameters of Optimization.} This schematic shows an example optimization geometry  at a complexity level of five diagonals. For each set of even diagonals, we allow each diagonal to travel away from each other from the center junction with distances $S_1,S_2$. Note that for every odd diagonal, the distance $S_0=0$ and it is not allowed to vary in order to ensure symmetry.}
+	\label{DomainSizeSchematic}
+\end{figure}
 % Bibliography
 %\nocite{aizenberg2005}
 %\nocite{deshpande2001}
