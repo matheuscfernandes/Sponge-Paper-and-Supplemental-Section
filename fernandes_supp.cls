@@ -77,7 +77,8 @@
 %\RequirePackage[numbers,sort&compress]{natbib}
 %\setlength{\bibsep}{0.0pt}
 %\RequirePackage[sort&compress,square,comma,authoryear]{natbib}
-\RequirePackage[round]{natbib}
+%\RequirePackage[round]{natbib}
+\RequirePackage[comma,super,square,sort&compress]{natbib}
 %%%%%%%%%%%%%%%%%%
 % LLT: use abbreviated style if shortarticle
 %\AtBeginDocument{%
@@ -316,6 +317,19 @@
 \usepackage{indentfirst}
 \usepackage{setspace}
 \usepackage{color,soul}
+
+%supplementary style
+\newcommand{\beginsupplement}{%
+	\setcounter{table}{0}
+	\renewcommand{\thetable}{S\arabic{table}}%
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{S\arabic{figure}}%
+	\setcounter{section}{0}
+	\renewcommand{\thesection}{S\arabic{section}}%
+	\setcounter{equation}{0}
+	\renewcommand{\theequation}{S\arabic{equation}}%
+}
+\beginsupplement
 
 % setting line numbers
 \usepackage{lineno}

@@ -3,9 +3,9 @@
 \graphicspath{{images_supp/}}
 
 \newcommand{\KB}[1]{\noindent\color{blue}$\Longrightarrow$ #1\normalcolor}
-\newcommand{\mf}[1]{\colorbox{blue!10}{\color{color3}#1}}
+\newcommand{\mf}[1]{\noindent\color{color2}\sethlcolor{cyan}\hl{$\Longrightarrow$#1}\normalcolor}
 
-\title{Supplemental Information:\\ Harnessing  Design Principles from Glass Sponges for Structurally Robust Lattice Structures}
+\title{\textit{Supplemental Information:}\\ Design Principles from Glass Sponges \\for Structurally Robust Lattices}
 
 \author[1]{Matheus C. Fernandes}
 \author[2]{James C. Weaver}
@@ -20,13 +20,17 @@
 \begin{document}
 \maketitle
 % \doublespace
-% \linenumbers
+\linenumbers
+
 \section{Structure of the Hexactinellid sponge \textit{Euplectella aspergillum}}\label{sec:params}
 The periodic structures investigated in this study are inspired by the skeleton of the Hexactinellid sponge \textit{Euplectella aspergillum (sp.)}, commonly known as the "Venus' flower basket". In this section we provide a detailed description of the sponge geometry and measured dimensions.
 
 \Cref{Sponge} shows a photograph of the entire skeleton of the \textit{Euplectella sp.}, and its intricate, cylindrical cage-like structure (20 to 25cm long, 2 to 4 cm in diameter) \citep{aizenberg2005}. The surface of the cylinder consists of a regular square lattice composed of a series of cemented vertical and horizontal struts with circular cross-section. The cell spacing between horizontal and vertical struts was reported  to be $L\approx 2.5$mm \citep{weaver2007}, while their diameter was measured to be $D_{nd}\approx 0.25$mm \citep{weaver2007}. Besides the horizontal and vertical struts, there is an additional set of diagonal elements, intersecting in a manner that creates a series of alternating open and closed cells, reminiscent of a checkerboard pattern \citep{weaver2007}. Although these diagonal elements are not as ordered as the horizontal and vertical ones, it has been shown that they can be approximated with two diagonal struts that are offset from the nodes  (vertex joints between non-diagonal elements) and form octagonal openings (\cref{Sponge}(d)). To estimate the volume ratio between diagonal and non-diagonal elements, we took high resolution photographs of the sponge and performed image segmentation to segregate the projected area of the vertical/horizontal and diagonal spicules. Using this approach, the projected area ratio of non-diagonal to diagonal elements was found to be $A_{nd}/A_{d}\approx1.4$. Note that here, and in the following, the subscripts $d$ and $nd$ are used to indicate diagonal and non-diagonal (i.e. horizontal and vertical) elements, respectively. 
 
 Finally, it should also be noted that the sponge is reinforced by external ridges that extend perpendicular to the surface of the cylinder and spiral the cage at an angle of $45^\text{o}$. However, in this paper we do not report the effects of these ridges on it's structural performance.
+
+\subsection{Image Segmentation Analysis}
+\mf{@James, add details of image segmentation analysis performed for extracting diameter rations between diagonals and non-diagonals}
 
 \begin{figure}
     \centering
@@ -89,7 +93,7 @@ For Designs B and C, which comprise diagonal elements, we also  constrain the vo
 \begin{equation}\label{con2}
 \frac{V_{\alpha,nd}}{V_{\alpha,d}}=\frac{V_{A,nd}}{V_{A,d}}=2\sqrt{2},
 \end{equation}
-with $\alpha=$ B and C.
+with $\alpha\in$ B and C.
 
 \begin{figure}[H]
     \centering
@@ -118,7 +122,7 @@ Finally, also for the case of rectangular cross-section we use Design A as our b
 \begin{equation}\label{con1R}
 {V}_{A,T}=V_{\alpha,d}+V_{\alpha,nd}= 8LH(T_{A,nd}+\sqrt{2}T_{A,d})=8LHT_{A,nd}\left(1+\frac{1}{\sqrt{2}}\right),
 \end{equation}
-with $\alpha=$ B, C and D.
+with $\alpha\in$ B, C and D.
 Moreover, for Designs B and C, which comprise diagonal elements, we also  constrain the volume ratio of the non-diagonal to diagonal elements to be the same as in Design A,
 \begin{equation}\label{con2R}
 \frac{V_{\alpha,nd}}{V_{\alpha,d}}=\sqrt{2},
@@ -289,10 +293,13 @@ From the main article figure\#\# \mf{add reference to main article results figur
 
 \begin{figure}
     \centering
-	\includegraphics[width=0.6\linewidth]{SFig10.png}
+	\includegraphics[width=0.9\linewidth]{SFig10.pdf}
 	\caption{{\bf RVE used for the different designs.} This figure portrays the different RVEs used for the different designs considered. Each unit cell is shifted by half of a square cell to the horizontally and half of a square cell  vertically. Periodic boundary conditions are applied on the nodes that intersect with the light gray dashed line.}
 	\label{RVE}
 \end{figure}
+
+\section{Experimental Setup}
+\mf{add full description of experimental setup and full table of 3D printed material properties; @James: I need to material properties}
 
 \section{Optimization Analysis}
 In an effort to identify lattice configurations resulting in large critical loads, we used a Python implementation of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) \citep{hansen2003}. CMA-ES is an evolutionary
@@ -316,7 +323,7 @@ The algorithm's initial values are chosen to be in the center of the design spac
 
 For the optimization results presented in the main article, we seek to maximize the critical buckling load using a single objective target function. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response (\cref{BucklingOptimization}.) 
 
-
+\mf{Add table with optimal parameters results for each N, for both circular and rectangular cross-sections}
 
 \begin{figure}
     \centering
@@ -366,14 +373,37 @@ For this cross-section we stay consistent with the natural sponge, and we can se
 	\caption{{\bf Global vs Local Instabilities.} This figure shows four identical analysis performed on the Designs A-D. For each analysis we obtain the critical buckling strain for varying $M\times M$ tessellations (y-axis) of the unit cell also for varying loading angle $\theta$ (x-axis). The color of a pixel corresponds to a value of critical buckling strain for that simulation. For each of the simulations, periodic boundary conditions are applied along the outer perimeter of the $M\times M$ structure. This plot conveys that for Designs A-C the prominent buckling mode is the local mode, whereas for Design D, the prominent mode is a global mode. Choosing a sufficiently large $M$ allows Design D to converge to a finite value for each $\theta$.}
 	\label{DomainSize}
 \end{figure}
-% Bibliography
-%\nocite{aizenberg2005}
-%\nocite{deshpande2001}
-%\nocite{miserez2008}
-%\nocite{weaver2010}
 
+\section{Stress Concentration}
+\mf{add section on stress concentration for plane strain setting}
+
+% Bibliography
 \bibliography{refs}
-\bibliographystyle{apalike}
+%\bibliographystyle{apalike}
 % \bibliographystyle{plainnat}
+\bibliographystyle{unsrtnat}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{SFig13.pdf}
+	\caption{{\bf asdf.} asdf}
+	\label{asdfa}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{SFig14.pdf}
+	\caption{{\bf asdf.} asdf}
+	\label{asdfgas}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{SFig15.pdf}
+	\caption{{\bf asdf.} asdf}
+	\label{asdfgdfsgas}
+\end{figure}
 
 \end{document}

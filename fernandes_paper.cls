@@ -61,7 +61,7 @@
 %                justification=RaggedRight]{caption}
 \RequirePackage{caption}
 \DeclareCaptionFont{colorcaption}{\color{color2}}
-\usepackage[labelfont={colorcaption,bf,sf},width=0.9\linewidth,format=hang,font=small]{caption}
+\usepackage[labelfont={colorcaption,bf,sf},width=0.9\linewidth,format=hang,font=normal]{caption}
 % \captionsetup{font=doublespacing} %double spacing of captions
 
 \setlength{\columnsep}{24pt} % Distance between the two columns of text
@@ -77,7 +77,9 @@
 %\RequirePackage[numbers,sort&compress]{natbib}
 %\setlength{\bibsep}{0.0pt}
 %\RequirePackage[sort&compress,square,comma,authoryear]{natbib}
-\RequirePackage[round]{natbib}
+%\RequirePackage[round,numbers]{natbib}
+\RequirePackage[comma,super,square,sort&compress]{natbib}
+\setlength{\bibsep}{3.0pt}
 %%%%%%%%%%%%%%%%%%
 % LLT: use abbreviated style if shortarticle
 %\AtBeginDocument{%
@@ -276,6 +278,7 @@
 
 % Other packages
 \RequirePackage{enumitem} % For reducing bullet list item separation
+\setitemize{itemsep=0pt,topsep=2pt,leftmargin=10pt}
 \usepackage{lipsum} % Required to insert dummy text
 
 % Delay certain patches/options till \begin{document} when all the booleans are set
