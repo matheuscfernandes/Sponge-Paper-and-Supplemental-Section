@@ -97,7 +97,7 @@ with $\alpha\in$ B and C.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\linewidth]{SFig2.png}
+    \includegraphics[width=0.5\linewidth]{SFig2}
     \caption{{\bf Unit cell for Design A.} This design is inspired by the sponge structure and consists of a square grid  reinforced by a double diagonal system. The horizontal and vertical struts have length $L$ and circular cross section with diameter $D_{A,nd}$ and, as with the sponge, we assume $D_{A,nd}/L=0.1$. The diagonal elements have a circular cross section  with diameter $D_{A,d}=2 D_{A,nd}$.}
     \label{DesignA}
 \end{figure}
@@ -302,8 +302,7 @@ From the main article figure\#\# \mf{add reference to main article results figur
 \mf{add full description of experimental setup and full table of 3D printed material properties; @James: I need to material properties}
 
 \section{Optimization Analysis}
-In an effort to identify lattice configurations resulting in large critical loads, we used a Python implementation of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) \citep{hansen2003}. CMA-ES is an evolutionary
-algorithm that is used to solve optimization/inverse problems by iteratively solving several forward problems to adjust a covariance matrix of the solution. CMA-ES is a derivative free algorithm, well suited for optimization problems of high dimensionality and non-linear parameter topology.
+In an effort to identify lattice configurations resulting in large critical loads, we used a Python implementation of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) \citep{hansen2003}. CMA-ES is an evolutionary algorithm that is used to solve optimization/inverse problems by iteratively solving several forward problems to adjust a covariance matrix of the solution. CMA-ES is a derivative free algorithm, well suited for optimization problems of high dimensionality and non-linear parameter topology.
 
 \begin{figure}
 	\centering
@@ -317,13 +316,46 @@ In this study we used CMA-ES to identify \begin{itemize}
 \item the volume ratio  of non-diagonal to diagonal members, $\lambda=V_{nd}/V_{d}$.
 \item  the separation between each even set of diagonals, $S_i$ (see Fig. \ref{OptimizationSchematic})
 \end{itemize}
-resulting in a lattice structure with the large critical load. For such optimization problem, the number of optimization variables increases with the number of diagonals incorporated in the model(i.e. the total number of parameters are $1+ \frac{1}{2}(N - (N \text{ mod } 2))$ for a given optimization instance with $N$ number of diagonals).  Note, for simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry (see Fig. \ref{OptimizationSchematic}). 
+resulting in a lattice structure with the largest critical load. For such optimization problem, the number of optimization variables increases with the number of diagonals incorporated in the model(i.e. the total number of parameters are $1+ \frac{1}{2}(N - (N \text{ mod } 2))$ for a given optimization instance with $N$ number of diagonals).  Note, for simulations with odd number of diagonal reinforcements, only an even number of diagonals are separated while keeping one diagonal going through the non-diagonal junction in order to ensure geometry symmetry (see Fig. \ref{OptimizationSchematic}). 
 
 The algorithm's initial values are chosen to be in the center of the design space, namely, $\lambda=1$ and diagonal separation for the even set of diagonals $S_i=0.5*L$. The covariance matrix is initialized uniformly with standard deviation ($\sigma$) half of the domain space, which are normalized to remain between 0 and 1. The optimization is run for uniaxial loading condition in the direction parallel to the vertical elements. 
 
 For the optimization results presented in the main article, we seek to maximize the critical buckling load using a single objective target function. However, an equivalent analysis is performed to maximize the critical buckling strain as the target response (\cref{BucklingOptimization}.) 
 
-\mf{Add table with optimal parameters results for each N, for both circular and rectangular cross-sections}
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{c||c|c|c|c|c}
+          & $\lambda$ & $S_1$ &$S_2$ &$S_3$&$S_4$ \\ \hline\hline
+         $N=1$ &  3.1454 &  &  &  &  \\ \hline
+         $N=2$ &  0.5614 &  0.3390 &  &  &  \\ \hline
+         $N=3$ &  1.4784 &  0.2440 &  &  &  \\ \hline
+         $N=4$ &  1.0151 &  0.0989 &  0.3358 &  &  \\ \hline
+         $N=5$ &  0.9509 &  0.1733 &  0.3260 &  &  \\ \hline
+         $N=6$ &  0.2009 &  0.2628 &  0.5827 &  0.8881 &  \\ \hline
+         $N=7$ &  0.2962 &  0.4197 &  0.6917 &  0.9126 &  \\ \hline
+         $N=8$ &  0.3263 &  0.1553 &  0.5533 &  0.7095 &  0.9113 \\
+    \end{tabular}
+\caption{Buckling Load Optimization}
+\label{table1}
+\end{table}
+
+
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{c||c|c|c|c|c}
+          & $\lambda$ & $S_1$ &$S_2$ &$S_3$&$S_4$ \\ \hline\hline
+         $N=1$ &  0.8908 &  &  &  &  \\ \hline
+         $N=2$ &  0.4157 &  0.3233 &  &  &  \\ \hline
+         $N=3$ &  0.3402 &  0.3268 &  &  &  \\ \hline
+         $N=4$ &  0.2271 &  0.6103 &  0.7923 &  &  \\ \hline
+         $N=5$ &  0.2772 &  0.2511 &  0.4076 &  &  \\ \hline
+         $N=6$ &  0.1764 &  0.2785 &  0.5743 &  0.8675 &  \\ \hline
+         $N=7$ &  0.1810 &  0.2899 &  0.5711 &  0.8443 &  \\ \hline
+         $N=8$ &  0.1023 &  0.1459 &  0.3317 &  0.5561 &  0.7843 \\
+    \end{tabular}
+\caption{Buckling Strain Optimization}
+\label{table2}
+\end{table}
 
 \begin{figure}
     \centering
@@ -383,14 +415,12 @@ For this cross-section we stay consistent with the natural sponge, and we can se
 % \bibliographystyle{plainnat}
 \bibliographystyle{unsrtnat}
 
-
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\linewidth]{SFig13.pdf}
 	\caption{{\bf asdf.} asdf}
 	\label{asdfa}
 \end{figure}
-
 
 \begin{figure}
 	\centering
@@ -404,6 +434,13 @@ For this cross-section we stay consistent with the natural sponge, and we can se
 	\includegraphics[width=0.9\linewidth]{SFig15.pdf}
 	\caption{{\bf asdf.} asdf}
 	\label{asdfgdfsgas}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{SFig16.pdf}
+	\caption{{\bf Stress Concentration.} Highest Misses Stress for different designs: Design A -- $3.362\times 10^{-2}$, Design B -- $4.362\times 10^{-2}$, Design C -- $4.165\times 10^{-2}$, Design D -- $3.550\times 10^{-2}$.}
+	\label{asdfgdfsgasasdf}
 \end{figure}
 
 \end{document}
